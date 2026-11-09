@@ -1,0 +1,11 @@
+expression Uzytkownik =
+		let
+		  Źródło = Sql.Database("localhost", "PoradniaDB"),
+		  #"Nawigacja 1" = Źródło{[Schema = "dbo", Item = "Uzytkownik"]}[Data],
+		  #"Usunięto kolumny" = Table.RemoveColumns(#"Nawigacja 1", {"Lekarz", "Rola", "Email", "Telefon", "HasloHash", "RolaID"})
+		in
+		  #"Usunięto kolumny"
+	lineageTag: 1ca678f6-c077-428a-82a3-f5c906509468
+
+	annotation PBI_ResultType = Table
+

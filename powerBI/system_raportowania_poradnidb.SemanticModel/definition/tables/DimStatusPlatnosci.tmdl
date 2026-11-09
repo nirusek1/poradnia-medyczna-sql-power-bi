@@ -1,0 +1,36 @@
+table DimStatusPlatnosci
+	lineageTag: ece8c3fb-1c8a-4b51-91d6-57ffc44fb9bc
+
+	column StatusPlatnosciID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 4c94805d-7111-438a-8cd3-b8bc17138910
+		summarizeBy: none
+		sourceColumn: StatusPlatnosciID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusPlatnosci
+		dataType: string
+		lineageTag: 0e05c46a-ca0a-4209-87b2-b92c33675f69
+		summarizeBy: none
+		sourceColumn: StatusPlatnosci
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimStatusPlatnosci = m
+		mode: import
+		source =
+				let
+				  Źródło = Sql.Database("localhost", "PoradniaDB"),
+				  #"Nawigacja 1" = Źródło{[Schema = "dbo", Item = "StatusPlatnosci"]}[Data],
+				  #"Usunięto kolumny" = Table.RemoveColumns(#"Nawigacja 1", {"Wizyta"}),
+				  #"Zmieniono nazwy kolumn" = Table.RenameColumns(#"Usunięto kolumny", {{"Nazwa", "StatusPlatnosci"}})
+				in
+				  #"Zmieniono nazwy kolumn"
+
+	annotation PBI_ResultType = Table
+

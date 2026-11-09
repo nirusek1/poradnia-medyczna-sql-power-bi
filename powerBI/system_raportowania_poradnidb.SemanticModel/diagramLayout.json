@@ -1,0 +1,152 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 637.65614172718381,
+            "y": 0
+          },
+          "nodeIndex": "DimData",
+          "nodeLineageTag": "3c12f10a-a4b2-46db-bd65-f15d2123bf6e",
+          "size": {
+            "height": 310.09333147238897,
+            "width": 234
+          },
+          "zIndex": 6
+        },
+        {
+          "location": {
+            "x": 1130.6620194335048,
+            "y": 1113.8553449234798
+          },
+          "nodeIndex": "DimICD10",
+          "nodeLineageTag": "05762b9f-b020-4a19-82e0-f81914c7398d",
+          "size": {
+            "height": 181.64266182821143,
+            "width": 234
+          },
+          "zIndex": 10
+        },
+        {
+          "location": {
+            "x": 971.07226263891016,
+            "y": 828.16568820798318
+          },
+          "nodeIndex": "DimLekarz",
+          "nodeLineageTag": "1b0f629e-0612-4f7d-9f49-f6bd3de31886",
+          "size": {
+            "height": 209.86533203067233,
+            "width": 234
+          },
+          "zIndex": 3
+        },
+        {
+          "location": {
+            "x": 283.09754412845342,
+            "y": 796.77815403312763
+          },
+          "nodeIndex": "DimPacjent",
+          "nodeLineageTag": "32b9afec-4314-4604-bd1a-4551165b4b27",
+          "size": {
+            "height": 310.05199497544993,
+            "width": 234
+          },
+          "zIndex": 9
+        },
+        {
+          "location": {
+            "x": 632.30266779809756,
+            "y": 957.95333427092692
+          },
+          "nodeIndex": "DimSpecjalizacja",
+          "nodeLineageTag": "31261ad0-57d2-4b2e-8a0d-b140fb57effe",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 1
+        },
+        {
+          "location": {
+            "x": 459.53669780822975,
+            "y": 1141.6927224873784
+          },
+          "nodeIndex": "DimStatusPlatnosci",
+          "nodeLineageTag": "ece8c3fb-1c8a-4b51-91d6-57ffc44fb9bc",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 5
+        },
+        {
+          "location": {
+            "x": 794.596658446079,
+            "y": 1139.6956708210796
+          },
+          "nodeIndex": "DimStatusWizyty",
+          "nodeLineageTag": "1b83f489-6ec6-4ae9-9820-d85bcd9dfae1",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 4
+        },
+        {
+          "location": {
+            "x": 126.28699149828881,
+            "y": 1137.9315855565555
+          },
+          "nodeIndex": "DimTypWizyty",
+          "nodeLineageTag": "d3db2b60-de4c-465b-a1f5-3865c67dd9b0",
+          "size": {
+            "height": 145,
+            "width": 234
+          },
+          "zIndex": 2
+        },
+        {
+          "location": {
+            "x": 633.3513209218512,
+            "y": 407.76521804202235
+          },
+          "nodeIndex": "FactWizyta",
+          "nodeLineageTag": "62b704b8-40af-4780-902c-ac3f7c57529e",
+          "size": {
+            "height": 415.56531807358942,
+            "width": 234
+          },
+          "zIndex": 7
+        },
+        {
+          "location": {
+            "x": 261.39267315412633,
+            "y": 0
+          },
+          "nodeIndex": "Miary",
+          "nodeLineageTag": "3eb5f0d3-6924-4880-9189-83abc33d82be",
+          "size": {
+            "height": 518.3852817851739,
+            "width": 234
+          },
+          "zIndex": 8
+        }
+      ],
+      "name": "Wszystkie tabele",
+      "zoomValue": 70.955543900968848,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "Wszystkie tabele",
+  "defaultDiagram": "Wszystkie tabele"
+}

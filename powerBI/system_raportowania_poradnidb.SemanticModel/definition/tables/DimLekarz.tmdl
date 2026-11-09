@@ -1,0 +1,64 @@
+table DimLekarz
+	lineageTag: 1b0f629e-0612-4f7d-9f49-f6bd3de31886
+
+	column LekarzID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1aef266d-65d9-4fe9-b3c5-1365206fad42
+		summarizeBy: none
+		sourceColumn: LekarzID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Imie
+		dataType: string
+		lineageTag: 4767f3f1-076c-42b6-a881-12f7befb10f2
+		summarizeBy: none
+		sourceColumn: Imie
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nazwisko
+		dataType: string
+		lineageTag: 2b2f3337-7705-45da-bebd-fe105f93cea9
+		summarizeBy: none
+		sourceColumn: Nazwisko
+
+		annotation SummarizationSetBy = Automatic
+
+	column Lekarz
+		dataType: string
+		lineageTag: 8c17ae97-c3ca-421e-8eed-0093907d60b5
+		summarizeBy: none
+		sourceColumn: Lekarz
+
+		annotation SummarizationSetBy = Automatic
+
+	column NrPWZ
+		dataType: string
+		lineageTag: 41a20c24-1390-44d0-be92-d99cb9da5ba9
+		summarizeBy: none
+		sourceColumn: NrPWZ
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimLekarz = m
+		mode: import
+		source =
+				let
+				  Źródło = Sql.Database("localhost", "PoradniaDB"),
+				  #"Nawigacja 1" = Źródło{[Schema = "dbo", Item = "Lekarz"]}[Data],
+				  #"Usunięto kolumny" = Table.RemoveColumns(#"Nawigacja 1", {"LekarzSpecjalizacja", "Uzytkownik"}),
+				  #"Scalone zapytania" = Table.NestedJoin(#"Usunięto kolumny", {"UzytkownikID"}, Uzytkownik, {"UzytkownikID"}, "Uzytkownik", JoinKind.LeftOuter),
+				  #"Rozwinięta kolumna Uzytkownik" = Table.ExpandTableColumn(#"Scalone zapytania", "Uzytkownik", {"Imie", "Nazwisko"}, {"Imie", "Nazwisko"}),
+				  #"Usunięto kolumny 1" = Table.RemoveColumns(#"Rozwinięta kolumna Uzytkownik", {"UzytkownikID"}),
+				  #"Dodano niestandardowe" = Table.TransformColumnTypes(Table.AddColumn(#"Usunięto kolumny 1", "Lekarz", each [Imie] & " " & [Nazwisko]), {{"Lekarz", type text}}),
+				  #"Zmieniono kolejność kolumn" = Table.ReorderColumns(#"Dodano niestandardowe", {"LekarzID", "Imie", "Nazwisko", "Lekarz", "NrPWZ"})
+				in
+				  #"Zmieniono kolejność kolumn"
+
+	annotation PBI_ResultType = Table
+

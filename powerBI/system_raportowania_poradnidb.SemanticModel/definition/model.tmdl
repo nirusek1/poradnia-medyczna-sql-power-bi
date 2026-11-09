@@ -1,0 +1,28 @@
+model Model
+	culture: pl-PL
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pl-PL
+	valueFilterBehavior: independent
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBI_QueryOrder = ["Miary","FactWizyta","DimPacjent","DimLekarz","DimSpecjalizacja","DimTypWizyty","DimStatusWizyty","DimStatusPlatnosci","DimICD10","DimData","Uzytkownik"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table FactWizyta
+ref table DimPacjent
+ref table DimLekarz
+ref table DimSpecjalizacja
+ref table DimTypWizyty
+ref table DimStatusWizyty
+ref table DimStatusPlatnosci
+ref table DimICD10
+ref table DimData
+ref table Miary
+
+ref cultureInfo pl-PL
+

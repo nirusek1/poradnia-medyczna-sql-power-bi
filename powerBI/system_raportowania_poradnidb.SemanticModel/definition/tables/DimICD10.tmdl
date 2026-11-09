@@ -1,0 +1,52 @@
+table DimICD10
+	lineageTag: 05762b9f-b020-4a19-82e0-f81914c7398d
+
+	column ICD10ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b18777b8-5b47-4727-baaf-66daba0556f4
+		summarizeBy: none
+		sourceColumn: ICD10ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column KodICD10
+		dataType: string
+		lineageTag: b3d26f72-f9eb-412c-9c44-6e7cf5b4f34b
+		summarizeBy: none
+		sourceColumn: KodICD10
+
+		annotation SummarizationSetBy = Automatic
+
+	column NazwaICD10
+		dataType: string
+		lineageTag: c0652fd5-b431-4a1c-91c0-38ed4df32269
+		summarizeBy: none
+		sourceColumn: NazwaICD10
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Rozpoznanie ICD10' =
+			
+			DimICD10[KodICD10] & " – " & DimICD10[NazwaICD10]
+		lineageTag: a06fe8ae-bd9b-4743-967f-910ed79b4bba
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimICD10 = m
+		mode: import
+		source =
+				let
+				  Źródło = Sql.Database("localhost", "PoradniaDB"),
+				  #"Nawigacja 1" = Źródło{[Schema = "dbo", Item = "ICD10"]}[Data],
+				  #"Usunięto kolumny" = Table.RemoveColumns(#"Nawigacja 1", {"Diagnoza", "SpecjalizacjaICD10"}),
+				  #"Zmieniono nazwy kolumn" = Table.RenameColumns(#"Usunięto kolumny", {{"Kod", "KodICD10"}, {"Nazwa", "NazwaICD10"}})
+				in
+				  #"Zmieniono nazwy kolumn"
+
+	annotation PBI_ResultType = Table
+

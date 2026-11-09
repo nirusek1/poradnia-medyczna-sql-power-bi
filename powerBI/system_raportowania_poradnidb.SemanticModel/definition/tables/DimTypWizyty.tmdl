@@ -1,0 +1,36 @@
+table DimTypWizyty
+	lineageTag: d3db2b60-de4c-465b-a1f5-3865c67dd9b0
+
+	column TypWizytyID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 86191e10-b2c8-425f-8779-99af38a2d013
+		summarizeBy: none
+		sourceColumn: TypWizytyID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypWizyty
+		dataType: string
+		lineageTag: 4fe617bd-9b96-4f0d-86c0-3fd4ed603ec2
+		summarizeBy: none
+		sourceColumn: TypWizyty
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimTypWizyty = m
+		mode: import
+		source =
+				let
+				  Źródło = Sql.Database("localhost", "PoradniaDB"),
+				  #"Nawigacja 1" = Źródło{[Schema = "dbo", Item = "TypWizyty"]}[Data],
+				  #"Usunięto kolumny" = Table.RemoveColumns(#"Nawigacja 1", {"Cennik", "Wizyta"}),
+				  #"Zmieniono nazwy kolumn" = Table.RenameColumns(#"Usunięto kolumny", {{"Nazwa", "TypWizyty"}})
+				in
+				  #"Zmieniono nazwy kolumn"
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,36 @@
+table DimSpecjalizacja
+	lineageTag: 31261ad0-57d2-4b2e-8a0d-b140fb57effe
+
+	column SpecjalizacjaID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 936cf479-3eb6-484a-963b-8a1783e9cb2a
+		summarizeBy: none
+		sourceColumn: SpecjalizacjaID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Specjalizacja
+		dataType: string
+		lineageTag: 268bd701-c0c7-41e0-aeea-4724ae5860d2
+		summarizeBy: none
+		sourceColumn: Specjalizacja
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimSpecjalizacja = m
+		mode: import
+		source =
+				let
+				  Źródło = Sql.Database("localhost", "PoradniaDB"),
+				  #"Nawigacja 1" = Źródło{[Schema = "dbo", Item = "Specjalizacja"]}[Data],
+				  #"Usunięto kolumny" = Table.RemoveColumns(#"Nawigacja 1", {"LekarzSpecjalizacja", "SpecjalizacjaICD10"}),
+				  #"Zmieniono nazwy kolumn" = Table.RenameColumns(#"Usunięto kolumny", {{"Nazwa", "Specjalizacja"}})
+				in
+				  #"Zmieniono nazwy kolumn"
+
+	annotation PBI_ResultType = Table
+

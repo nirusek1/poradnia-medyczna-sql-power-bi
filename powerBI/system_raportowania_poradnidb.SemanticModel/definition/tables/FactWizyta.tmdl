@@ -1,0 +1,183 @@
+table FactWizyta
+	lineageTag: 62b704b8-40af-4780-902c-ac3f7c57529e
+
+	column WizytaID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 91e05954-7a37-4b79-8ca0-c5c8deb21aa2
+		summarizeBy: count
+		sourceColumn: WizytaID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataWizyty
+		dataType: dateTime
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: e79f802f-135b-45c1-a0b7-f72ac6d4a0ea
+		summarizeBy: none
+		sourceColumn: DataWizyty
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column DataWizytyData
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: e91b8f03-daee-4636-a4ea-ab7469a5ca7e
+		summarizeBy: none
+		sourceColumn: DataWizytyData
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column PacjentID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 03f77d47-7c81-45e6-a29c-a3eadef6ebe0
+		summarizeBy: none
+		sourceColumn: PacjentID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LekarzID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: efc591ea-548d-400f-be6f-1e880d0225f8
+		summarizeBy: none
+		sourceColumn: LekarzID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpecjalizacjaID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: dee4ebdd-a031-4068-a8ee-7fb34b08c4d5
+		summarizeBy: none
+		sourceColumn: SpecjalizacjaID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column TypWizytyID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 77a77e58-cc61-4a3d-85b2-69b1c61bf42e
+		summarizeBy: none
+		sourceColumn: TypWizytyID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column StatusWizytyID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 06d58632-cf74-4445-befd-77b247dc290d
+		summarizeBy: none
+		sourceColumn: StatusWizytyID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ICD10ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 78554fe6-f9e6-412c-99fb-7dd4262564c1
+		summarizeBy: none
+		sourceColumn: ICD10ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kwota
+		dataType: double
+		formatString: #,0.00\ "zł";-#,0.00\ "zł";#,0.00\ "zł"
+		lineageTag: 2855f80d-fc4a-4dda-855f-419cd103d033
+		summarizeBy: sum
+		sourceColumn: Kwota
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pl-PL"}
+
+	column DataPlatnosci
+		dataType: dateTime
+		formatString: dd.mm.yyyy hh:nn
+		lineageTag: e04f6052-51d4-43a8-91a8-50873d306deb
+		summarizeBy: none
+		sourceColumn: DataPlatnosci
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column DataPlatnosciData
+		dataType: dateTime
+		isHidden
+		formatString: Long Date
+		lineageTag: e0ba3da8-8089-4c09-91f0-0f5da2e3f1d9
+		summarizeBy: none
+		sourceColumn: DataPlatnosciData
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column StatusPlatnosciID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: acf09752-1fe1-414d-92ca-6c24f8af4d2e
+		summarizeBy: none
+		sourceColumn: StatusPlatnosciID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactWizyta = m
+		mode: import
+		source =
+				let
+				  Źródło = Sql.Database("localhost", "PoradniaDB"),
+				  #"Nawigacja 1" = Źródło{[Schema = "dbo", Item = "vw_FactWizyty"]}[Data],
+				  #"Zmieniono typ kolumny" = Table.TransformColumnTypes(#"Nawigacja 1", {{"WizytaID", Int64.Type}, {"PacjentID", Int64.Type}, {"LekarzID", Int64.Type}, {"SpecjalizacjaID", Int64.Type}, {"StatusWizytyID", Int64.Type}, {"StatusPlatnosciID", Int64.Type}, {"TypWizytyID", Int64.Type}, {"ICD10ID", Int64.Type}, {"DataWizyty", type datetime}, {"DataPlatnosci", type datetime}, {"Kwota", type number}, {"Plec", type text}, {"LekarzImie", type text}, {"LekarzNazwisko", type text}, {"Specjalizacja", type text}, {"TypWizyty", type text}, {"StatusWizyty", type text}, {"KodICD10", type text}, {"NazwaICD10", type text}, {"StatusPlatnosci", type text}}),
+				  #"Usunięto kolumny" = Table.RemoveColumns(#"Zmieniono typ kolumny", {"Rok", "Dzien", "Miesiac", "Plec", "LekarzImie", "LekarzNazwisko", "Specjalizacja", "TypWizyty", "StatusWizyty", "KodICD10", "NazwaICD10", "StatusPlatnosci"}),
+				  #"Zduplikowano kolumnę" = Table.DuplicateColumn(#"Usunięto kolumny", "DataWizyty", "DataWizyty — kopia"),
+				  #"Zmieniono kolejność kolumn" = Table.ReorderColumns(#"Zduplikowano kolumnę", {"WizytaID", "DataWizyty", "DataWizyty — kopia", "PacjentID", "LekarzID", "SpecjalizacjaID", "TypWizytyID", "StatusWizytyID", "ICD10ID", "Kwota", "DataPlatnosci", "StatusPlatnosciID"}),
+				  #"Obliczona data" = Table.TransformColumns(#"Zmieniono kolejność kolumn", {{"DataWizyty — kopia", each DateTime.Date(_), type nullable date}}),
+				  #"Zmieniono nazwy kolumn" = Table.RenameColumns(#"Obliczona data", {{"DataWizyty — kopia", "DataWizytyData"}}),
+				  #"Zduplikowano kolumnę 1" = Table.DuplicateColumn(#"Zmieniono nazwy kolumn", "DataPlatnosci", "DataPlatnosci — kopia"),
+				  #"Zmieniono kolejność kolumn 1" = Table.ReorderColumns(#"Zduplikowano kolumnę 1", {"WizytaID", "DataWizyty", "DataWizytyData", "PacjentID", "LekarzID", "SpecjalizacjaID", "TypWizytyID", "StatusWizytyID", "ICD10ID", "Kwota", "DataPlatnosci", "DataPlatnosci — kopia", "StatusPlatnosciID"}),
+				  #"Obliczona data 1" = Table.TransformColumns(#"Zmieniono kolejność kolumn 1", {{"DataPlatnosci — kopia", each DateTime.Date(_), type nullable date}}),
+				  #"Zmieniono nazwy kolumn 1" = Table.RenameColumns(#"Obliczona data 1", {{"DataPlatnosci — kopia", "DataPlatnosciData"}})
+				in
+				  #"Zmieniono nazwy kolumn 1"
+
+	annotation PBI_ResultType = Table
+
