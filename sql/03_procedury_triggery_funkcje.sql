@@ -22,9 +22,10 @@ I. PROCEDURY SKŁADOWANE
 PROCEDURA: sp_DodajPlatnosc
 --------------------------------------------------------------------
 
-Dla zrealizowanej wizyty bez płatności pobiera cenę z Cennik,
-dodaje płatność z datą bieżącą i ustawia status opłacona.
-Teleporady opłacane są w sp_ZarejestrujWizyte.
+Dla umówionej i nieopłaconej konsultacji lub kontroli pobiera
+cenę z Cennik, dodaje płatność i ustawia status opłacona.
+Płatność musi poprzedzać realizację wizyty. Teleporady są
+opłacane automatycznie w sp_ZarejestrujWizyte.
 --------------------------------------------------------------------
 */
 
@@ -35,55 +36,56 @@ BEGIN
     SET NOCOUNT ON;
     SET XACT_ABORT ON;
 
+    DECLARE @StatusWizytyID INT;
+    DECLARE @StatusPlatnosciID INT;
+    DECLARE @TypWizytyID INT;
+
     BEGIN TRY
         BEGIN TRANSACTION;
 
-        IF NOT EXISTS (
-            SELECT 1
-            FROM Wizyta
-            WHERE WizytaID = @WizytaID
-        )
+        SELECT
+            @StatusWizytyID = StatusWizytyID,
+            @StatusPlatnosciID = StatusPlatnosciID,
+            @TypWizytyID = TypWizytyID
+        FROM dbo.Wizyta WITH (UPDLOCK, HOLDLOCK)
+        WHERE WizytaID = @WizytaID;
+
+        IF @StatusWizytyID IS NULL
             THROW 50001, 'Wizyta o podanym ID nie istnieje.', 1;
 
         IF EXISTS (
-            SELECT 1
-            FROM Platnosc
-            WHERE WizytaID = @WizytaID
+            SELECT 1 FROM dbo.Platnosc WHERE WizytaID = @WizytaID
         )
             THROW 50002, 'Platnosc dla tej wizyty juz istnieje.', 1;
 
-        IF EXISTS (
-            SELECT 1
-            FROM Wizyta
-            WHERE WizytaID = @WizytaID
-              AND StatusWizytyID <> 2
-        )
-            THROW 50003, 'Platnosc mozna dodac tylko dla wizyty zrealizowanej.', 1;
+        IF @StatusWizytyID <> 1
+           OR @StatusPlatnosciID <> 1
+           OR @TypWizytyID = 3
+            THROW 50003,
+                'Oplacic mozna tylko umowiona, nieoplacona konsultacje lub kontrole.', 1;
 
         IF NOT EXISTS (
             SELECT 1
-            FROM Wizyta w
-                JOIN Cennik c
-                    ON w.TypWizytyID = c.TypWizytyID
+            FROM dbo.Wizyta w
+            JOIN dbo.Cennik c ON w.TypWizytyID = c.TypWizytyID
             WHERE w.WizytaID = @WizytaID
         )
             THROW 50004, 'Brak ceny dla wskazanego typu wizyty.', 1;
 
-        INSERT INTO Platnosc (WizytaID, Kwota, DataPlatnosci)
-        SELECT
-            w.WizytaID,
-            c.Kwota,
-            GETDATE()
-        FROM Wizyta w
-            JOIN Cennik c ON w.TypWizytyID = c.TypWizytyID
+        INSERT INTO dbo.Platnosc (WizytaID, Kwota, DataPlatnosci)
+        SELECT w.WizytaID, c.Kwota, SYSDATETIME()
+        FROM dbo.Wizyta w
+        JOIN dbo.Cennik c ON w.TypWizytyID = c.TypWizytyID
         WHERE w.WizytaID = @WizytaID;
 
         IF @@ROWCOUNT <> 1
             THROW 50023, 'Nie udalo sie dodac platnosci do wizyty.', 1;
 
-        UPDATE Wizyta
+        UPDATE dbo.Wizyta
         SET StatusPlatnosciID = 2
-        WHERE WizytaID = @WizytaID;
+        WHERE WizytaID = @WizytaID
+          AND StatusWizytyID = 1
+          AND StatusPlatnosciID = 1;
 
         IF @@ROWCOUNT <> 1
             THROW 50024, 'Nie udalo sie zaktualizowac statusu platnosci.', 1;
@@ -93,7 +95,6 @@ BEGIN
     BEGIN CATCH
         IF XACT_STATE() <> 0
             ROLLBACK TRANSACTION;
-
         THROW;
     END CATCH;
 END;
@@ -162,7 +163,7 @@ dodaje przedpłatę i nadaje status płatności opłacona.
 --------------------------------------------------------------------
 */
 
-CREATE PROCEDURE sp_ZarejestrujWizyte
+CREATE OR ALTER PROCEDURE sp_ZarejestrujWizyte
     @PacjentID INT,
     @LekarzID INT,
     @SpecjalizacjaID INT,
@@ -223,6 +224,7 @@ BEGIN
             FROM Wizyta
             WHERE LekarzID = @LekarzID
               AND DataWizyty = @DataWizyty
+			  AND StatusWizytyID <> 3
         )
             THROW 50014, 'Lekarz ma juz zaplanowana wizyte w tym terminie.', 1;
 
@@ -279,10 +281,10 @@ GO
 PROCEDURA: sp_AnulujWizyte
 --------------------------------------------------------------------
 
-Anuluje wyłącznie wizytę umówioną; odrzuca ponowne
-anulowanie oraz anulowanie wizyty zrealizowanej.
-Dla teleporady zmienia status płatności na zwrot,
-zachowując rekord Platnosc; nie realizuje przelewu zwrotnego.
+Anuluje wyłącznie wizytę umówioną.
+Dla wizyty nieopłaconej zachowuje status nieopłacona.
+Dla wizyty opłaconej (także stacjonarnej) ustawia status zwrot,
+zachowując rekord Platnosc. Nie wykonuje faktycznego przelewu zwrotnego.
 --------------------------------------------------------------------
 */
 
@@ -290,40 +292,61 @@ CREATE PROCEDURE sp_AnulujWizyte
     @WizytaID INT
 AS
 BEGIN
+    SET NOCOUNT ON;
+    SET XACT_ABORT ON;
 
-IF NOT EXISTS (
-    SELECT 1
-    FROM Wizyta
-    WHERE WizytaID = @WizytaID
-)
-    THROW 50001, 'Wizyta o podanym ID nie istnieje.', 1;
+    DECLARE @StatusWizytyID INT;
+    DECLARE @StatusPlatnosciID INT;
 
-IF EXISTS (
-    SELECT 1
-    FROM Wizyta
-    WHERE WizytaID = @WizytaID
-      AND StatusWizytyID = 2
-)
-    THROW 50015, 'Nie mozna anulowac wizyty zrealizowanej.', 1;
+    BEGIN TRY
+        BEGIN TRANSACTION;
 
-IF EXISTS (
-    SELECT 1
-    FROM Wizyta
-    WHERE WizytaID = @WizytaID
-      AND StatusWizytyID = 3
-)
-    THROW 50016, 'Wizyta jest juz anulowana.', 1;
+        SELECT
+            @StatusWizytyID = StatusWizytyID,
+            @StatusPlatnosciID = StatusPlatnosciID
+        FROM dbo.Wizyta WITH (UPDLOCK, HOLDLOCK)
+        WHERE WizytaID = @WizytaID;
 
-UPDATE Wizyta
-SET
-    StatusWizytyID = 3,
-    StatusPlatnosciID =
-        CASE
-            WHEN TypWizytyID = 3 THEN 3
-            ELSE 1
-        END
-WHERE WizytaID = @WizytaID;
+        IF @StatusWizytyID IS NULL
+            THROW 50001, 'Wizyta o podanym ID nie istnieje.', 1;
 
+        IF @StatusWizytyID = 2
+            THROW 50015, 'Nie mozna anulowac wizyty zrealizowanej.', 1;
+
+        IF @StatusWizytyID = 3
+            THROW 50016, 'Wizyta jest juz anulowana.', 1;
+
+        IF @StatusPlatnosciID = 2 AND NOT EXISTS (
+            SELECT 1 FROM dbo.Platnosc WHERE WizytaID = @WizytaID
+        )
+            THROW 50027, 'Wizyta oznaczona jako oplacona nie ma rekordu platnosci.', 1;
+
+        IF @StatusPlatnosciID = 1 AND EXISTS (
+            SELECT 1 FROM dbo.Platnosc WHERE WizytaID = @WizytaID
+        )
+            THROW 50028, 'Nieoplacona wizyta ma niezgodny rekord platnosci.', 1;
+
+        IF @StatusPlatnosciID NOT IN (1, 2)
+            THROW 50029, 'Niepoprawny status platnosci dla umowionej wizyty.', 1;
+
+        UPDATE dbo.Wizyta
+        SET StatusWizytyID = 3,
+            StatusPlatnosciID = CASE
+                WHEN @StatusPlatnosciID = 2 THEN 3
+                ELSE 1
+            END
+        WHERE WizytaID = @WizytaID AND StatusWizytyID = 1;
+
+        IF @@ROWCOUNT <> 1
+            THROW 50022, 'Nie udalo sie anulowac wizyty.', 1;
+
+        COMMIT TRANSACTION;
+    END TRY
+    BEGIN CATCH
+        IF XACT_STATE() <> 0
+            ROLLBACK TRANSACTION;
+        THROW;
+    END CATCH;
 END;
 GO
 
@@ -334,7 +357,7 @@ GO
 PROCEDURA: sp_ZrealizujWizyte
 --------------------------------------------------------------------
 
-Potwierdza realizację wizyty umówionej po nadejściu jej terminu
+Potwierdza opłaconą wizytę umówioną po nadejściu jej terminu
 oraz zapisuje diagnozę ICD-10 w jednej transakcji.
 Zgodność diagnozy ze specjalizacją i statusem wizyty kontrolują
 triggery tabeli Diagnoza.
@@ -351,6 +374,7 @@ BEGIN
     SET XACT_ABORT ON;
 
     DECLARE @StatusWizytyID INT;
+    DECLARE @StatusPlatnosciID INT;
     DECLARE @DataWizyty DATETIME2(0);
 
     BEGIN TRY
@@ -358,6 +382,7 @@ BEGIN
 
         SELECT
             @StatusWizytyID = StatusWizytyID,
+            @StatusPlatnosciID = StatusPlatnosciID,
             @DataWizyty = DataWizyty
         FROM Wizyta WITH (UPDLOCK, HOLDLOCK)
         WHERE WizytaID = @WizytaID;
@@ -371,6 +396,11 @@ BEGIN
         IF @DataWizyty > SYSDATETIME()
             THROW 50021, 'Nie mozna zrealizowac wizyty przed jej terminem.', 1;
 
+        IF @StatusPlatnosciID <> 2 OR NOT EXISTS (
+            SELECT 1 FROM dbo.Platnosc WHERE WizytaID = @WizytaID
+        )
+            THROW 50027, 'Przed realizacja wizyty wymagana jest zarejestrowana platnosc.', 1;
+
         IF NOT EXISTS (
             SELECT 1
             FROM ICD10
@@ -382,6 +412,7 @@ BEGIN
         SET StatusWizytyID = 2
         WHERE WizytaID = @WizytaID
           AND StatusWizytyID = 1
+          AND StatusPlatnosciID = 2
           AND DataWizyty <= SYSDATETIME();
 
         IF @@ROWCOUNT <> 1
@@ -411,17 +442,16 @@ GO
 PROCEDURA: sp_SprawdzDostepnoscLekarza
 --------------------------------------------------------------------
 
-Sprawdza istnienie lekarza oraz dostępność przyszłego terminu.
-Brak daty zgłasza jako błąd 50013. Pozostałe wyniki zwraca
-zgodnie z zasadami tabeli Wizyta: dni robocze (pon.–pt.),
+Sprawdza istnienie lekarza oraz dostępność przyszłego terminu. 
+Pozostałe wyniki zwraca zgodnie z zasadami tabeli Wizyta: dni robocze (pon.–pt.),
 godziny rozpoczęcia 08:00–15:30 i interwał 30 minut.
-Zajętość uwzględnia wszystkie wizyty, także anulowane,
-zgodnie z ograniczeniem UNIQUE(LekarzID, DataWizyty).
-Nie uwzględnia indywidualnych grafików lekarzy..
+Termin jest zajęty wyłącznie przez wizyty nieanulowane.
+Anulowanie wizyty zwalnia termin do ponownej rezerwacji.
+Nie uwzględnia indywidualnych grafików lekarzy.
 --------------------------------------------------------------------
 */
 
-CREATE PROCEDURE sp_SprawdzDostepnoscLekarza
+CREATE OR ALTER PROCEDURE sp_SprawdzDostepnoscLekarza
     @LekarzID INT,
     @DataWizyty DATETIME2(0)
 AS
@@ -460,6 +490,7 @@ BEGIN
                 FROM Wizyta
                 WHERE LekarzID = @LekarzID
                   AND DataWizyty = @DataWizyty
+				  AND StatusWizytyID <> 3
             )
                 THEN N'Termin zajęty'
 
@@ -509,7 +540,8 @@ PROCEDURA: sp_RaportMiesieczny
 --------------------------------------------------------------------
 
 Wizyty zrealizowane liczy według daty wizyty;
-przychód z tych wizyt sumuje według daty płatności.
+przychód to suma wszystkich zarejestrowanych wpłat
+w miesiącu według daty płatności, niezależnie od statusu wizyty.
 Parametry: rok i miesiąc (1–12).
 --------------------------------------------------------------------
 */
@@ -536,10 +568,8 @@ SELECT
 
     (SELECT COALESCE(SUM(p.Kwota), 0)
      FROM Platnosc p
-            JOIN Wizyta w ON p.WizytaID = w.WizytaID
-     WHERE w.StatusWizytyID = 2
-          AND p.DataPlatnosci >= @DataOd
-          AND p.DataPlatnosci < @DataDo
+     WHERE p.DataPlatnosci >= @DataOd
+       AND p.DataPlatnosci < @DataDo
     ) AS Przychod;
 
 END;
@@ -646,9 +676,6 @@ GO
 ====================================================================
 III. TRIGGERY
 ====================================================================
-
-Oba triggery uruchamiane są po INSERT; nie obsługują UPDATE.
-====================================================================
 */
 
 
@@ -657,16 +684,18 @@ Oba triggery uruchamiane są po INSERT; nie obsługują UPDATE.
 TRIGGER: trg_Diagnoza_Specjalizacja
 --------------------------------------------------------------------
 
-AFTER INSERT: odrzuca rozpoznanie ICD-10 nieprzypisane
+AFTER INSERT, UPDATE: odrzuca rozpoznanie ICD-10 nieprzypisane
 do specjalizacji wskazanej w wizycie.
 --------------------------------------------------------------------
 */
 
-CREATE TRIGGER trg_Diagnoza_Specjalizacja
+CREATE OR ALTER TRIGGER trg_Diagnoza_Specjalizacja
 ON Diagnoza
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
+    SET NOCOUNT ON;
+
     IF EXISTS (
         SELECT 1
         FROM inserted i
@@ -689,23 +718,109 @@ GO
 TRIGGER: trg_Diagnoza_Status
 --------------------------------------------------------------------
 
-AFTER INSERT: odrzuca diagnozę dla wizyty o statusie
-innym niż zrealizowana.
+AFTER INSERT, UPDATE: odrzuca diagnozę przypisaną do wizyty
+o statusie innym niż zrealizowana.
 --------------------------------------------------------------------
 */
 
-CREATE TRIGGER trg_Diagnoza_Status
+CREATE OR ALTER TRIGGER trg_Diagnoza_Status
 ON Diagnoza
-AFTER INSERT
+AFTER INSERT, UPDATE
 AS
 BEGIN
+    SET NOCOUNT ON;
+
     IF EXISTS (
         SELECT 1
         FROM inserted i
-        JOIN Wizyta w ON i.WizytaID = w.WizytaID
+        JOIN Wizyta w
+            ON i.WizytaID = w.WizytaID
         WHERE w.StatusWizytyID <> 2
     )
-        THROW 50019, 'Diagnoza moze byc dodana tylko dla wizyty zrealizowanej.', 1;
+        THROW 50019, 'Diagnoza moze byc przypisana tylko do wizyty zrealizowanej.', 1;
 
+END;
+GO
+
+
+
+/*
+------------------------------------------------------------
+TRIGGER: trg_Wizyta_DiagnozaIntegralnosc
+------------------------------------------------------------
+
+AFTER UPDATE: kontroluje zgodnosc istniejacych
+diagnoz ze statusem i specjalizacja wizyty.
+------------------------------------------------------------
+*/
+
+CREATE OR ALTER TRIGGER trg_Wizyta_DiagnozaIntegralnosc
+ON dbo.Wizyta
+AFTER UPDATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM inserted i
+        JOIN dbo.Diagnoza d
+            ON d.WizytaID = i.WizytaID
+        WHERE i.StatusWizytyID <> 2
+           OR NOT EXISTS (
+                SELECT 1
+                FROM dbo.SpecjalizacjaICD10 si
+                WHERE si.SpecjalizacjaID = i.SpecjalizacjaID
+                  AND si.ICD10ID = d.ICD10ID
+           )
+    )
+    BEGIN
+        THROW 50030,
+            'Zmiana wizyty narusza zgodnosc diagnozy.',
+            1;
+    END;
+END;
+GO
+
+
+
+/*
+------------------------------------------------------------
+TRIGGER: trg_SpecjalizacjaICD10_Integralnosc
+------------------------------------------------------------
+
+AFTER UPDATE, DELETE: zabezpiecza powiazania
+specjalizacji z kodami ICD-10 wykorzystywane
+przez istniejace diagnozy.
+------------------------------------------------------------
+*/
+
+CREATE OR ALTER TRIGGER trg_SpecjalizacjaICD10_Integralnosc
+ON dbo.SpecjalizacjaICD10
+AFTER UPDATE, DELETE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF EXISTS (
+        SELECT 1
+        FROM deleted old
+        JOIN dbo.Wizyta w
+            ON w.SpecjalizacjaID = old.SpecjalizacjaID
+        JOIN dbo.Diagnoza d
+            ON d.WizytaID = w.WizytaID
+           AND d.ICD10ID = old.ICD10ID
+        WHERE NOT EXISTS (
+            SELECT 1
+            FROM dbo.SpecjalizacjaICD10 si
+            WHERE si.SpecjalizacjaID = w.SpecjalizacjaID
+              AND si.ICD10ID = d.ICD10ID
+        )
+    )
+    BEGIN
+        THROW 50031,
+            'Zmiana mapowania ICD10 narusza zgodnosc diagnoz.',
+            1;
+    END;
 END;
 GO
