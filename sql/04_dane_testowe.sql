@@ -86,7 +86,7 @@ INSERT INTO ICD10 (Kod, Nazwa) VALUES
 ('L40', N'Łuszczyca'),
 ('K21', N'Refluks żołądkowo-przełykowy'),
 ('K29', N'Zapalenie błony śluzowej żołądka'),
-('N39', N'Zakażenie układu moczowego'),
+('N39', N'Inne choroby układu moczowego'),
 ('F41', N'Zaburzenia lękowe'),
 ('G43', 'Migrena'),
 ('R51', N'Ból głowy'),
@@ -96,7 +96,7 @@ INSERT INTO ICD10 (Kod, Nazwa) VALUES
 ('I25',N'Przewlekła choroba niedokrwienna serca'),
 ('I48',N'Migotanie przedsionków'),
 ('I49','Zaburzenia rytmu serca'),
-('I34',N'Niewydolność zastawki mitralnej'),
+('I34',N'Niereumatyczne choroby zastawki mitralnej'),
 ('L30',N'Zapalenie skóry nieokreślone'),
 ('L70',N'Trądzik'),
 ('B35',N'Grzybica skóry'),
@@ -106,7 +106,7 @@ INSERT INTO ICD10 (Kod, Nazwa) VALUES
 ('M51',N'Inne choroby krążka międzykręgowego'),
 ('M75','Uszkodzenia barku'),
 ('S83',N'Skręcenie i naderwanie kolana'),
-('M77',N'Zapalenie nadkłykcia (łokieć tenisisty)'),
+('M77',N'Inne entezopatie'),
 ('E05',N'Nadczynność tarczycy'),
 ('E66',N'Otyłość'),
 ('E78','Zaburzenia lipidowe'),
@@ -114,7 +114,7 @@ INSERT INTO ICD10 (Kod, Nazwa) VALUES
 ('E23',N'Zaburzenia przysadki mózgowej'),
 ('G40','Padaczka'),
 ('G44',N'Inne zespoły bólu głowy'),
-('G56',N'Zespół cieśni nadgarstka'),
+('G56',N'Mononeuropatie kończyny górnej'),
 ('G62','Polineuropatia'),
 ('F07','Zaburzenia funkcji poznawczych'),
 ('J00','Ostre zapalenie nosa'),
@@ -205,7 +205,7 @@ VALUES
 (1, 21),  -- I25  Przewlekła choroba niedokrwienna serca
 (1, 22),  -- I48  Migotanie przedsionków
 (1, 23),  -- I49  Zaburzenia rytmu serca
-(1, 24),  -- I34  Niewydolność zastawki mitralnej
+(1, 24),  -- I34  Niereumatyczne choroby zastawki mitralnej
 
 -- Dermatologia
 (2, 10),  -- L20  Atopowe zapalenie skóry
@@ -223,7 +223,7 @@ VALUES
 (3, 31),  -- M51  Inne choroby krążka międzykręgowego
 (3, 32),  -- M75  Uszkodzenia barku
 (3, 33),  -- S83  Skręcenie i naderwanie kolana
-(3, 34),  -- M77  Zapalenie nadkłykcia
+(3, 34),  -- M77  Inne entezopatie
 
 -- Endokrynologia
 (4, 4),   -- E11  Cukrzyca typu 2
@@ -239,7 +239,7 @@ VALUES
 (5, 7),   -- J06  Ostre zapalenie górnych dróg oddechowych
 (5, 12),  -- K21  Refluks żołądkowo-przełykowy
 (5, 13),  -- K29  Zapalenie błony śluzowej żołądka
-(5, 14),  -- N39  Zakażenie układu moczowego
+(5, 14),  -- N39  Inne choroby układu moczowego
 (5, 15),  -- F41  Zaburzenia lękowe
 (5, 17),  -- R51  Ból głowy
 (5, 18),  -- Z00  Badanie ogólne
@@ -254,7 +254,7 @@ VALUES
 (6, 16),  -- G43  Migrena
 (6, 40),  -- G40  Padaczka
 (6, 41),  -- G44  Inne zespoły bólu głowy
-(6, 42),  -- G56  Zespół cieśni nadgarstka
+(6, 42),  -- G56  Mononeuropatie kończyny górnej
 (6, 43),  -- G62  Polineuropatia
 (6, 44);  -- F07  Zaburzenia funkcji poznawczych
 
