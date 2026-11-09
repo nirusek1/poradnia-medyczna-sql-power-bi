@@ -113,10 +113,10 @@ Format danych kontaktowych weryfikują ograniczenia tabeli.
 --------------------------------------------------------------------
 */
 
-CREATE PROCEDURE sp_DodajPacjenta
+CREATE OR ALTER PROCEDURE sp_DodajPacjenta
     @Imie NVARCHAR(50),
     @Nazwisko NVARCHAR(80),
-    @PESEL CHAR(11),
+    @PESEL NVARCHAR(MAX),
     @DataUrodzenia DATE,
     @Plec CHAR(1),
     @Adres NVARCHAR(200),
@@ -124,6 +124,13 @@ CREATE PROCEDURE sp_DodajPacjenta
     @Email NVARCHAR(100) = NULL
 AS
 BEGIN
+
+IF @PESEL IS NULL
+   OR DATALENGTH(@PESEL) <> 22
+   OR @PESEL COLLATE Latin1_General_100_BIN2 LIKE N'%[^0-9]%'
+BEGIN
+    THROW 50032, 'Numer PESEL musi skladac sie dokladnie z 11 cyfr.', 1;
+END;
 
 IF EXISTS (
     SELECT 1
