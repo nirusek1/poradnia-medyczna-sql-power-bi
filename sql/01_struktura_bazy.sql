@@ -157,7 +157,6 @@ GO
 TABELA: Uzytkownik
 --------------------------------------------------------------------
 
-Konta przypisane do ról; unikalny adres e-mail.
 HasloHash przeznaczone do przechowywania skrótu hasła.
 Walidacja formatu telefonu i e-maila.
 --------------------------------------------------------------------
@@ -269,13 +268,13 @@ Encje operacyjne systemu: wizyty, diagnozy oraz płatności.
 TABELA: Wizyta
 --------------------------------------------------------------------
 
-UNIQUE(LekarzID, DataWizyty) blokuje powtórne zajęcie terminu
-również wtedy, gdy istniejąca wizyta ma status anulowanej.
+Unikalny indeks filtrowany (LekarzID, DataWizyty) blokuje kolizje
+wizyt nieanulowanych, a po anulowaniu zwalnia termin do ponownej rezerwacji.
 Termin: poniedziałek–piątek, 08:00–15:30, co 30 minut.
 DataUtworzenia musi poprzedzać DataWizyty.
 Klucz złożony wymusza przypisanie lekarza do specjalizacji.
 CHECK blokuje wybrane niedozwolone połączenia typu wizyty,
-statusu wizyty i statusu płatności.
+statusu wizyty i statusu płatności, w tym realizację bez opłaty.
 --------------------------------------------------------------------
 */
 
@@ -310,9 +309,6 @@ CREATE TABLE Wizyta (
 		FOREIGN KEY (LekarzID, SpecjalizacjaID)
 		REFERENCES LekarzSpecjalizacja(LekarzID, SpecjalizacjaID),
 
-    CONSTRAINT UQ_Lekarz_DataWizyty
-        UNIQUE (LekarzID, DataWizyty),
-
     CONSTRAINT CK_Wizyta_Daty
         CHECK (DataUtworzenia < DataWizyty),
 
@@ -328,7 +324,11 @@ CREATE TABLE Wizyta (
         CHECK (DATEPART(HOUR, DataWizyty) BETWEEN 8 AND 15),
 
     CONSTRAINT CK_Wizyta_StatusLogiczny
-        CHECK (NOT (StatusWizytyID = 3 AND StatusPlatnosciID = 2)),
+        CHECK (
+            NOT (StatusWizytyID = 3 AND StatusPlatnosciID = 2)
+            AND NOT (StatusWizytyID = 2 AND StatusPlatnosciID <> 2)
+            AND NOT (StatusWizytyID = 1 AND StatusPlatnosciID = 3)
+        ),
 
     CONSTRAINT CK_Wizyta_Typ_StatusPlatnosci
         CHECK (NOT (TypWizytyID = 3 AND StatusPlatnosciID = 1))
@@ -412,3 +412,20 @@ ON Diagnoza (ICD10ID);
 
 CREATE INDEX IX_Platnosc_DataPlatnosci
 ON Platnosc(DataPlatnosci);
+
+
+/*
+--------------------------------------------------------------------
+INDEKS: UX_Wizyta_AktywneTerminy
+--------------------------------------------------------------------
+
+Zapewnia unikalność terminu dla wizyt nieanulowanych.
+Wizyty o statusie Anulowana (3) nie blokują ponownej
+rezerwacji terminu, ale pozostają w historii poradni.
+--------------------------------------------------------------------
+*/
+
+CREATE UNIQUE NONCLUSTERED INDEX UX_Wizyta_AktywneTerminy
+ON dbo.Wizyta (LekarzID, DataWizyty)
+WHERE StatusWizytyID <> 3;
+GO
