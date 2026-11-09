@@ -6,6 +6,7 @@ Repozytorium zawiera implementację relacyjnej bazy danych poradni medycznej ora
 
 - **[SQL](SQL/)** – skrypty tworzące strukturę bazy danych, widoki, procedury, funkcje, triggery oraz dane testowe. Folder zawiera również diagram ERD.
 - **[PowerBI](PowerBI/)** – projekt raportowania, model danych, miary DAX i eksport raportu do PDF.
+-  **[test](test/)**
 
 ## Uruchomienie
 
