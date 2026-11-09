@@ -41,14 +41,14 @@ GO
 --------------------------------------------------------------------
 WIDOK: vw_WizytaBezPlatnosci
 
-Wizyty ze statusem płatności opłacona bez rekordu w Platnosc.
+Wizyty ze statusem płatności opłacona lub zwrot bez rekordu w Platnosc.
 --------------------------------------------------------------------
 */
 
 CREATE VIEW vw_WizytaBezPlatnosci AS
 SELECT *
 FROM Wizyta w
-WHERE w.StatusPlatnosciID = 2
+WHERE w.StatusPlatnosciID IN (2, 3)
 AND NOT EXISTS (
     SELECT 1 FROM Platnosc p WHERE p.WizytaID = w.WizytaID
 );
@@ -82,51 +82,48 @@ GO
 --------------------------------------------------------------------
 WIDOK: vw_NiespojnoscStatusow
 
-Identyfikuje kombinacje statusów niezgodne z modelem rozliczeń:
-- umówiona konsultacja lub kontrola musi byc nieopłacona;
-- umówiona teleporada musi byc opłacona (przedpłata);
-- zrealizowana wizyta nie moze miec statusu zwrot;
-- anulowana konsultacja lub kontrola  musi byc nieopłacona;
-- anulowana teleporada musi miec status zwrot.
-Zrealizowana konsultacja lub kontrola może oczekiwać na płatność.
+Identyfikuje niespójne kombinacje statusów wizyt i płatności:
+- umówiona konsultacja lub kontrola: nieopłacona albo opłacona;
+- umówiona teleporada: opłacona z góry;
+- zrealizowana wizyta: opłacona;
+- anulowana konsultacja lub kontrola: nieopłacona, jeśli wcześniej
+  nie pobrano wpłaty, albo zwrot, jeśli wpłatę pobrano;
+- anulowana teleporada: zwrot.
+Statusy opłacona/zwrot wymagają rekordu Platnosc, a nieopłacona
+nie powinna mieć przypisanej wpłaty.
 --------------------------------------------------------------------
 */
 
 CREATE VIEW dbo.vw_NiespojnoscStatusow AS
-SELECT *
-FROM dbo.Wizyta
+SELECT w.*
+FROM dbo.Wizyta w
 WHERE
-    -- Umowiona konsultacja lub kontrola musi byc nieoplacona
-    (StatusWizytyID = 1
-     AND TypWizytyID <> 3
-     AND StatusPlatnosciID <> 1)
-
+    -- Umówiona wizyta nie może mieć statusu zwrot.
+    (w.StatusWizytyID = 1 AND w.StatusPlatnosciID = 3)
     OR
-
-    -- Umowiona teleporada musi byc oplacona
-    (StatusWizytyID = 1
-     AND TypWizytyID = 3
-     AND StatusPlatnosciID <> 2)
-
+    -- Teleporada wymaga przedpłaty już na etapie rejestracji.
+    (w.StatusWizytyID = 1 AND w.TypWizytyID = 3
+     AND w.StatusPlatnosciID <> 2)
     OR
-
-    -- Zrealizowana wizyta nie moze miec statusu zwrot
-    (StatusWizytyID = 2
-     AND StatusPlatnosciID = 3)
-
+    -- Każda zrealizowana wizyta musi być opłacona.
+    (w.StatusWizytyID = 2 AND w.StatusPlatnosciID <> 2)
     OR
-
-    -- Anulowana konsultacja lub kontrola musi byc nieoplacona
-    (StatusWizytyID = 3
-     AND TypWizytyID <> 3
-     AND StatusPlatnosciID <> 1)
-
+    -- Anulowana wizyta nie może pozostawać opłacona.
+    (w.StatusWizytyID = 3 AND w.StatusPlatnosciID = 2)
     OR
-
-    -- Anulowana teleporada musi miec status zwrot
-    (StatusWizytyID = 3
-     AND TypWizytyID = 3
-     AND StatusPlatnosciID <> 3);
+    -- Anulowana teleporada wymaga oznaczenia zwrotu.
+    (w.StatusWizytyID = 3 AND w.TypWizytyID = 3
+     AND w.StatusPlatnosciID <> 3)
+    OR
+    -- Opłacenie/zwrot wymaga zachowania rekordu wpłaty.
+    (w.StatusPlatnosciID IN (2, 3) AND NOT EXISTS (
+        SELECT 1 FROM dbo.Platnosc p WHERE p.WizytaID = w.WizytaID
+    ))
+    OR
+    -- Wizyta nieopłacona nie może posiadać przypisanej wpłaty.
+    (w.StatusPlatnosciID = 1 AND EXISTS (
+        SELECT 1 FROM dbo.Platnosc p WHERE p.WizytaID = w.WizytaID
+    ));
 GO
 
 
@@ -295,19 +292,16 @@ GO
 --------------------------------------------------------------------
 WIDOK: vw_RaportPrzychodow
 
-Przychód miesięczny z płatności dotyczących wizyt
-zrealizowanych, grupowany według daty płatności.
+Przychód miesięczny z płatności, grupowany według daty płatności.
 --------------------------------------------------------------------
 */
 
-CREATE VIEW vw_RaportPrzychodow AS
+CREATE OR ALTER VIEW dbo.vw_RaportPrzychodow AS
 SELECT
     YEAR(p.DataPlatnosci) AS Rok,
     MONTH(p.DataPlatnosci) AS Miesiac,
     SUM(p.Kwota) AS Przychod
-FROM Platnosc p
-    JOIN Wizyta w ON p.WizytaID = w.WizytaID
-WHERE w.StatusWizytyID = 2
+FROM dbo.Platnosc p
 GROUP BY
     YEAR(p.DataPlatnosci),
     MONTH(p.DataPlatnosci);
@@ -319,12 +313,11 @@ GO
 --------------------------------------------------------------------
 WIDOK: vw_PrzychodyLekarzy
 
-Przychód miesięczny według lekarza i daty płatności;
-uwzględnia wyłącznie wizyty zrealizowane.
+Przychód miesięczny według lekarza i daty płatności.
 --------------------------------------------------------------------
 */
 
-CREATE VIEW vw_PrzychodyLekarzy AS
+CREATE OR ALTER VIEW dbo.vw_PrzychodyLekarzy AS
 SELECT
     YEAR(p.DataPlatnosci) AS Rok,
     MONTH(p.DataPlatnosci) AS Miesiac,
@@ -332,11 +325,13 @@ SELECT
     u.Imie,
     u.Nazwisko,
     SUM(p.Kwota) AS Przychod
-FROM Platnosc p
-    JOIN Wizyta w ON p.WizytaID = w.WizytaID
-    JOIN Lekarz l ON w.LekarzID = l.LekarzID
-    JOIN Uzytkownik u ON l.UzytkownikID = u.UzytkownikID
-WHERE w.StatusWizytyID = 2
+FROM dbo.Platnosc p
+JOIN dbo.Wizyta w
+    ON p.WizytaID = w.WizytaID
+JOIN dbo.Lekarz l
+    ON w.LekarzID = l.LekarzID
+JOIN dbo.Uzytkownik u
+    ON l.UzytkownikID = u.UzytkownikID
 GROUP BY
     YEAR(p.DataPlatnosci),
     MONTH(p.DataPlatnosci),
