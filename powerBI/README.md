@@ -4,10 +4,10 @@
 
 | Element | Zawartość |
 |---|---|
-| `system_raportowania.pbip` | Plik projektu Power BI |
-| `system_raportowania.Report/` | Definicje stron, wizualizacji i interakcji |
-| `system_raportowania.SemanticModel/` | Model danych, relacje, zapytania Power Query i miary DAX |
-| `system_raportowania.pdf` | Podgląd gotowego raportu |
+| `system_raportowania_poradnidb.pbip` | Plik projektu Power BI |
+| `system_raportowania_poradnidb.Report/` | Definicje stron, wizualizacji i interakcji |
+| `system_raportowania_poradnidb.SemanticModel/` | Model danych, relacje, zapytania Power Query i miary DAX |
+| `system_raportowania_poradnidb.pdf` | Podgląd gotowego raportu |
 
 ## Model danych
 
@@ -16,15 +16,17 @@ Model analityczny oparto na tabeli faktów `FactWizyta` oraz powiązanych tabela
 Dane wizyt pobierane są z widoku SQL `dbo.vw_FactWizyty`, natomiast dane opisowe pochodzą z odpowiednich tabel bazy `PoradniaDB`.
 
 Zastosowano:
+
 - Relacje jeden-do-wielu z jednokierunkowym filtrowaniem.
 - Aktywną relację kalendarza dla daty wizyty.
 - Nieaktywną relację kalendarza dla daty płatności.
 - Transformacje Power Query przygotowujące dane do analiz.
+- Tryb importowania danych z SQL Server.
 - Miary DAX uwzględniające kontekst filtrowania.
 
 ## Wybrane rozwiązania DAX
 
-- **`USERELATIONSHIP`** – obliczanie przychodu według daty płatności, niezależnie od daty wykonania świadczenia.
+- **`USERELATIONSHIP`** – aktywowanie relacji z kalendarzem według daty płatności na potrzeby obliczania przychodu.
 - **`REMOVEFILTERS`** – uwzględnianie historii wizyt przy identyfikacji pacjentów powracających.
 - **Miary referencyjne** – porównywanie wskaźników specjalizacji i lekarzy z wynikami całej poradni.
 - **`DIVIDE`** – obliczanie wskaźników procentowych i średnich z obsługą dzielenia przez zero.
@@ -47,18 +49,13 @@ Raport udostępnia zsynchronizowane fragmentatory okresu i specjalizacji, dynami
 
 Wybrane wykresy porównawcze pozostają niezależne od fragmentatora specjalizacji.
 
+Domyślny okres analizy obejmuje dane od 1 stycznia do 30 czerwca 2025 r.
+
 ## Uruchomienie projektu
 
-**Wymagania:** Power BI Desktop oraz dostęp do bazy SQL Server `PoradniaDB`.
+**Wymagania:** Power BI Desktop oraz dostęp do bazy Microsoft SQL Server `PoradniaDB`.
 
 1. Pobrać repozytorium, zachowując strukturę folderów projektu.
-2. Odtworzyć bazę `PoradniaDB` przy użyciu skryptów z katalogu `SQL`.
-3. Otworzyć plik `system_raportowania.pbip` w Power BI Desktop.
-4. W razie potrzeby przejść do **Plik → Opcje i ustawienia → Ustawienia źródła danych** i zaktualizować nazwę serwera SQL Server.
-5. Skonfigurować uwierzytelnianie i odświeżyć dane.
-
-Domyślna konfiguracja projektu wskazuje serwer `localhost` i bazę `PoradniaDB`.
-
-**Uwaga:** Projekt PBIP zawiera definicje raportu i modelu, ale nie zawiera zaimportowanych danych. Po pobraniu z GitHuba należy zapewnić dostęp do bazy źródłowej i wykonać odświeżenie.
-
-Podgląd raportu bez uruchamiania Power BI jest dostępny w pliku `system_raportowania.pdf`.
+2. Utworzyć bazę `PoradniaDB` przy użyciu skryptów z katalogu `sql`.
+3. Otworzyć plik `system_raportowania_poradnidb.pbip` w Power BI Desktop.
+4. W razie potrzeby przejść do **Plik → Opcje i ustawienia → Ustawienia źródła danych**
