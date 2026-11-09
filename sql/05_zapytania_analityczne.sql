@@ -234,15 +234,14 @@ IV. ANALIZA FINANSOWA
 */
 
 -- Przychód miesięczny według DataPlatnosci.
--- Tylko płatności dotyczące wizyt zrealizowanych;
--- przedpłaty za wizyty później wykonane poza okresem nie są liczone.
+-- Wszystkie zarejestrowane wpłaty w okresie, również przedpłaty
+-- oraz wpłaty dotyczące wizyt anulowanych (bez potrącania zwrotów).
 SELECT
     YEAR(DataPlatnosci) AS Rok,
     MONTH(DataPlatnosci) AS Miesiac,
     SUM(Kwota) AS Przychod
 FROM vw_FactWizyty
-WHERE StatusWizytyID = 2
-  AND DataPlatnosci >= @DataOd
+WHERE DataPlatnosci >= @DataOd
   AND DataPlatnosci < @DataDo
   AND Kwota IS NOT NULL
 GROUP BY
