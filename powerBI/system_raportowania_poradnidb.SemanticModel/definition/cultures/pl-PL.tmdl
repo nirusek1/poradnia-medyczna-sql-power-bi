@@ -1,0 +1,5369 @@
+cultureInfo pl-PL
+
+	linguisticMetadata =
+			{
+			  "Version": "4.1.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "fact_wizyta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "fact wizyta": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "FactWizyta": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fact_wizyta.wizyta_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "WizytaID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "wizyta ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "WizytaID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "wizyta identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "wizyta identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "wizyta identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "wizyta credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "fact_wizyta.data_wizyty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "DataWizyty"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data wizyty": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DataWizyty": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "information wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "fact wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "info wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "statistic wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "document wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "figure wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "record wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_wizyta.data_wizyty_data": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "DataWizytyData"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "data wizyty data": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DataWizytyData": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "data wizyty information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "data wizyty fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "data wizyty info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "data wizyty statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "data wizyty document": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "data wizyty figure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "data wizyty record": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "information wizyty data": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fact wizyty data": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "info wizyty data": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_wizyta.pacjent_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "PacjentID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "pacjent ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PacjentID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "pacjent identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "pacjent identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "pacjent identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "pacjent credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "fact_wizyta.lekarz_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "LekarzID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "lekarz ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LekarzID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "lekarz identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "lekarz identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "lekarz identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "lekarz credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "fact_wizyta.specjalizacja_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "SpecjalizacjaID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "specjalizacja ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SpecjalizacjaID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "specjalizacja identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "specjalizacja identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "specjalizacja identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "specjalizacja credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "fact_wizyta.typ_wizyty_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "TypWizytyID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "typ wizyty ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TypWizytyID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "typ wizyty identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "typ wizyty identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "typ wizyty identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "typ wizyty credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "fact_wizyta.status_wizyty_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "StatusWizytyID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "status wizyty ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "StatusWizytyID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "status wizyty identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status wizyty identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status wizyty identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status wizyty credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "category wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "importance wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prestige wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prominence wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "condition wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "class wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "fact_wizyta.icd_1_0id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "ICD10ID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "icd 1 0id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ICD10ID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "fact_wizyta.kwota": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "Kwota"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "kwota": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "fact_wizyta.data_platnosci": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "DataPlatnosci"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data platnosci": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DataPlatnosci": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "information platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "fact platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "info platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "statistic platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "document platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "figure platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "record platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_wizyta.data_platnosci_data": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "DataPlatnosciData"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "data platnosci data": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DataPlatnosciData": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "data platnosci information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "data platnosci fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "data platnosci info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "data platnosci statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "data platnosci document": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "data platnosci figure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "data platnosci record": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "information platnosci data": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "fact platnosci data": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "info platnosci data": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "fact_wizyta.status_platnosci_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "FactWizyta",
+			          "ConceptualProperty": "StatusPlatnosciID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "status platnosci ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "StatusPlatnosciID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "status platnosci identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status platnosci identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status platnosci identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status platnosci credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "category platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "importance platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prestige platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prominence platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "condition platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "class platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "dim_pacjent": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPacjent"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim pacjent": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DimPacjent": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_pacjent.pacjent_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPacjent",
+			          "ConceptualProperty": "PacjentID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "pacjent ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PacjentID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "pacjent identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "pacjent identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "pacjent identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "pacjent credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "dim_pacjent.imie": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPacjent",
+			          "ConceptualProperty": "Imie"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "imie": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_pacjent.nazwisko": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPacjent",
+			          "ConceptualProperty": "Nazwisko"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nazwisko": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_pacjent.data_urodzenia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPacjent",
+			          "ConceptualProperty": "DataUrodzenia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data urodzenia": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DataUrodzenia": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "information urodzenia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "fact urodzenia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "info urodzenia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "statistic urodzenia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "document urodzenia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "figure urodzenia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "record urodzenia": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dim_pacjent.plec": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPacjent",
+			          "ConceptualProperty": "Plec"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "plec": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_pacjent.wiek": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPacjent",
+			          "ConceptualProperty": "Wiek"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wiek": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_pacjent.grupa_wiekowa": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPacjent",
+			          "ConceptualProperty": "GrupaWiekowa"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "grupa wiekowa": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "GrupaWiekowa": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_pacjent.grupa_wiekowa_sort": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPacjent",
+			          "ConceptualProperty": "GrupaWiekowaSort"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "grupa wiekowa sort": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "GrupaWiekowaSort": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "grupa wiekowa category": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "grupa wiekowa genus": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "grupa wiekowa species": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "grupa wiekowa variety": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "grupa wiekowa nature": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "grupa wiekowa kind": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "grupa wiekowa class": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "grupa wiekowa type": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "grupa wiekowa ilk": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "grupa wiekowa order": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        }
+			      ]
+			    },
+			    "dim_lekarz": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimLekarz"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim lekarz": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DimLekarz": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_lekarz.lekarz_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimLekarz",
+			          "ConceptualProperty": "LekarzID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "lekarz ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "LekarzID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "lekarz identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "lekarz identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "lekarz identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "lekarz credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "dim_lekarz.imie": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimLekarz",
+			          "ConceptualProperty": "Imie"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "imie": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_lekarz.nazwisko": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimLekarz",
+			          "ConceptualProperty": "Nazwisko"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nazwisko": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_lekarz.lekarz": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimLekarz",
+			          "ConceptualProperty": "Lekarz"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "lekarz": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_lekarz.nr_PWZ": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimLekarz",
+			          "ConceptualProperty": "NrPWZ"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nr PWZ": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NrPWZ": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "PWZ": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "dim_specjalizacja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimSpecjalizacja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim specjalizacja": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DimSpecjalizacja": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_specjalizacja.specjalizacja_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimSpecjalizacja",
+			          "ConceptualProperty": "SpecjalizacjaID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "specjalizacja ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "SpecjalizacjaID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "specjalizacja identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "specjalizacja identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "specjalizacja identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "specjalizacja credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "dim_specjalizacja.specjalizacja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimSpecjalizacja",
+			          "ConceptualProperty": "Specjalizacja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "specjalizacja": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_typ_wizyty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimTypWizyty"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim typ wizyty": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DimTypWizyty": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_typ_wizyty.typ_wizyty_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimTypWizyty",
+			          "ConceptualProperty": "TypWizytyID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "typ wizyty ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TypWizytyID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "typ wizyty identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "typ wizyty identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "typ wizyty identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "typ wizyty credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        }
+			      ]
+			    },
+			    "dim_typ_wizyty.typ_wizyty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimTypWizyty",
+			          "ConceptualProperty": "TypWizyty"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "typ wizyty": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "TypWizyty": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_status_wizyty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimStatusWizyty"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim status wizyty": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DimStatusWizyty": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "dim category wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "dim importance wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "dim prestige wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "dim prominence wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "dim condition wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "dim class wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "dim grade wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "dim level wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "dim position wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "dim rank wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "dim_status_wizyty.status_wizyty_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimStatusWizyty",
+			          "ConceptualProperty": "StatusWizytyID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "status wizyty ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "StatusWizytyID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "status wizyty identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status wizyty identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status wizyty identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status wizyty credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "category wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "importance wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prestige wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prominence wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "condition wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "class wizyty id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "dim_status_wizyty.status_wizyty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimStatusWizyty",
+			          "ConceptualProperty": "StatusWizyty"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "status wizyty": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "StatusWizyty": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "category wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "importance wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "prestige wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "prominence wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "condition wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "class wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "grade wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "level wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "position wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "rank wizyty": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "dim_status_platnosci": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimStatusPlatnosci"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim status platnosci": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DimStatusPlatnosci": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "dim category platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "dim importance platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "dim prestige platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "dim prominence platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "dim condition platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "dim class platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "dim grade platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "dim level platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "dim position platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "dim rank platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "dim_status_platnosci.status_platnosci_ID": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimStatusPlatnosci",
+			          "ConceptualProperty": "StatusPlatnosciID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "status platnosci ID": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "StatusPlatnosciID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "status platnosci identification": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status platnosci identity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status platnosci identifier": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.762
+			          }
+			        },
+			        {
+			          "status platnosci credential": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.739
+			          }
+			        },
+			        {
+			          "category platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "importance platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prestige platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "prominence platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.609
+			          }
+			        },
+			        {
+			          "condition platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "class platnosci id": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        }
+			      ]
+			    },
+			    "dim_status_platnosci.status_platnosci": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimStatusPlatnosci",
+			          "ConceptualProperty": "StatusPlatnosci"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "status platnosci": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "StatusPlatnosci": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "category platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "importance platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "prestige platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "prominence platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.6
+			          }
+			        },
+			        {
+			          "condition platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "class platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "grade platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "level platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "position platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        },
+			        {
+			          "rank platnosci": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.582
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ICD10": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimICD10"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim ICD10": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DimICD10": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "ICD10": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ICD10.icd_1_0id": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimICD10",
+			          "ConceptualProperty": "ICD10ID"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "icd 1 0id": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "ICD10ID": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ICD10.kod_ICD10": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimICD10",
+			          "ConceptualProperty": "KodICD10"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "kod ICD10": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "KodICD10": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ICD10.nazwa_ICD10": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimICD10",
+			          "ConceptualProperty": "NazwaICD10"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "nazwa ICD10": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NazwaICD10": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_data": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimData"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dim data": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DimData": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "dim information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "dim fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "dim info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "dim statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.75
+			          }
+			        },
+			        {
+			          "dim document": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "dim figure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        },
+			        {
+			          "dim record": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.727
+			          }
+			        }
+			      ]
+			    },
+			    "dim_data.data": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimData",
+			          "ConceptualProperty": "Data"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "data": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "date": {
+			            "State": "Generated",
+			            "Weight": 0.7
+			          }
+			        },
+			        {
+			          "information": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "fact": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "info": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "statistic": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.736
+			          }
+			        },
+			        {
+			          "document": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "figure": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        },
+			        {
+			          "record": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.714
+			          }
+			        }
+			      ],
+			      "SemanticType": "Time"
+			    },
+			    "dim_data.rok": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimData",
+			          "ConceptualProperty": "Rok"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "rok": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_data.numer_miesiaca": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimData",
+			          "ConceptualProperty": "NumerMiesiaca"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "numer miesiaca": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NumerMiesiaca": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_data.miesiac": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimData",
+			          "ConceptualProperty": "Miesiac"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "miesiac": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_data.kwartal": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimData",
+			          "ConceptualProperty": "Kwartal"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "kwartal": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "dim_data.rok_miesiac": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimData",
+			          "ConceptualProperty": "RokMiesiac"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "rok miesiac": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "RokMiesiac": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_data.dzien_miesiaca": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimData",
+			          "ConceptualProperty": "DzienMiesiaca"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dzien miesiaca": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DzienMiesiaca": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_data.numer_dnia_tygodnia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimData",
+			          "ConceptualProperty": "NumerDniaTygodnia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "numer dnia tygodnia": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "NumerDniaTygodnia": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_data.dzien_tygodnia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimData",
+			          "ConceptualProperty": "DzienTygodnia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "dzien tygodnia": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "DzienTygodnia": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "miary": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "miary": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.pomocnicza": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Pomocnicza"
+			        }
+			      },
+			      "State": "Generated",
+			      "Visibility": {
+			        "Value": "Hidden"
+			      },
+			      "Terms": [
+			        {
+			          "pomocnicza": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.liczba_wizyt": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Liczba wizyt"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "liczba wizyt": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.wizyty_zrealizowane": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Wizyty zrealizowane"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wizyty zrealizowane": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.wizyty_anulowane": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Wizyty anulowane"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wizyty anulowane": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.aktywni_pacjenci": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Aktywni pacjenci"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "aktywni pacjenci": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.wskaźnik_anulowań": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Wskaźnik anulowań"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wskaźnik anulowań": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.przychód": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Przychód"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "przychód": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Przychód  (wg daty płatności)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        },
+			        {
+			          "Przychód (wg daty płatności)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "miary.wartość_zrealizowanych_usług": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Wartość zrealizowanych usług"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wartość zrealizowanych usług": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Wartość usług (wg daty wizyty)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "miary.średnia_wartość_wizyty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Średnia wartość wizyty"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "średnia wartość wizyty": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.średnia_wizyt_na_pacjenta": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Średnia wizyt na pacjenta"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "średnia wizyt na pacjenta": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.liczba_pacjentów": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Liczba pacjentów"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "liczba pacjentów": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.pacjenci_powracający": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Pacjenci powracający"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "pacjenci powracający": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.udział_pacjentów_powracających": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Udział pacjentów powracających"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "udział pacjentów powracających": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.wskaźnik_anulowań_poradni": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Wskaźnik anulowań poradni"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wskaźnik anulowań poradni": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.średnia_wizyt_na_lekarza__poradnia": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Średnia wizyt na lekarza – poradnia"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "średnia wizyt na lekarza – poradnia": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.wizyty_zrealizowane__specjalizacja": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Wizyty zrealizowane – specjalizacja"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "wizyty zrealizowane – specjalizacja": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Łączna liczba wizyt specjalizacji": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "dim_pacjent.plec_opis": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimPacjent",
+			          "ConceptualProperty": "PlecOpis"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "plec opis": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "PlecOpis": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        }
+			      ]
+			    },
+			    "dim_ICD10.rozpoznanie_ICD10": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "DimICD10",
+			          "ConceptualProperty": "Rozpoznanie ICD10"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "rozpoznanie ICD10": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    },
+			    "miary.udział_typu_wizyty": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "Miary",
+			          "ConceptualProperty": "Udział typu wizyty"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "udział typu wizyty": {
+			            "State": "Generated"
+			          }
+			        }
+			      ]
+			    }
+			  },
+			  "Relationships": {
+			    "fact_wizyta_has_dim_status_wizyty": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "dim_status_wizyty": {
+			          "Target": {
+			            "Entity": "dim_status_wizyty"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "dim_status_wizyty"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_dim_status_wizyties"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_status_wizyty"
+			            },
+			            "Object": {
+			              "Role": "fact_wizyta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_status_wizyties_have_fact_wizytas"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_dim_typ_wizyty": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "dim_typ_wizyty": {
+			          "Target": {
+			            "Entity": "dim_typ_wizyty"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "dim_typ_wizyty"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_dim_typ_wizyties"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_typ_wizyty"
+			            },
+			            "Object": {
+			              "Role": "fact_wizyta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_typ_wizyties_have_fact_wizytas"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_dim_specjalizacja": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "dim_specjalizacja": {
+			          "Target": {
+			            "Entity": "dim_specjalizacja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "dim_specjalizacja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_dim_specjalizacjas"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_specjalizacja"
+			            },
+			            "Object": {
+			              "Role": "fact_wizyta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_specjalizacjas_have_fact_wizytas"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_dim_lekarz": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "dim_lekarz": {
+			          "Target": {
+			            "Entity": "dim_lekarz"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "dim_lekarz"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_dim_lekarzzes"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_lekarz"
+			            },
+			            "Object": {
+			              "Role": "fact_wizyta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_lekarzzes_have_fact_wizytas"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_dim_pacjent": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "dim_pacjent": {
+			          "Target": {
+			            "Entity": "dim_pacjent"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "dim_pacjent"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_dim_pacjents"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_pacjent"
+			            },
+			            "Object": {
+			              "Role": "fact_wizyta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_pacjents_have_fact_wizytas"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_udział_typu_wizyty": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.udział_typu_wizyty": {
+			          "Target": {
+			            "Entity": "miary.udział_typu_wizyty"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.udział_typu_wizyty"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_udział_typu_wizyty"
+			        }
+			      ]
+			    },
+			    "dim_ICD10_has_rozpoznanie_ICD10": {
+			      "Binding": {
+			        "ConceptualEntity": "DimICD10"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_ICD10": {
+			          "Target": {
+			            "Entity": "dim_ICD10"
+			          }
+			        },
+			        "dim_ICD10.rozpoznanie_ICD10": {
+			          "Target": {
+			            "Entity": "dim_ICD10.rozpoznanie_ICD10"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_ICD10"
+			            },
+			            "Object": {
+			              "Role": "dim_ICD10.rozpoznanie_ICD10"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_ICD10_have_rozpoznanie_ICD10"
+			        }
+			      ]
+			    },
+			    "dim_pacjent_has_plec_opis": {
+			      "Binding": {
+			        "ConceptualEntity": "DimPacjent"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_pacjent": {
+			          "Target": {
+			            "Entity": "dim_pacjent"
+			          }
+			        },
+			        "dim_pacjent.plec_opis": {
+			          "Target": {
+			            "Entity": "dim_pacjent.plec_opis"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_pacjent"
+			            },
+			            "Object": {
+			              "Role": "dim_pacjent.plec_opis"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_pacjents_have_plec_opises"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_wizyty_zrealizowane__specjalizacja": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.wizyty_zrealizowane__specjalizacja": {
+			          "Target": {
+			            "Entity": "miary.wizyty_zrealizowane__specjalizacja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.wizyty_zrealizowane__specjalizacja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_wizyty_zrealizowane__specjalizacja"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_średnia_wizyt_na_lekarza__poradnia": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.średnia_wizyt_na_lekarza__poradnia": {
+			          "Target": {
+			            "Entity": "miary.średnia_wizyt_na_lekarza__poradnia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.średnia_wizyt_na_lekarza__poradnia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_średnia_wizyt_na_lekarza__poradnia"
+			        }
+			      ]
+			    },
+			    "dim_lekarz_has_miary_średnia_wizyt_na_lekarza__poradnia": {
+			      "Binding": {
+			        "ConceptualEntity": "DimLekarz"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_lekarz": {
+			          "Target": {
+			            "Entity": "dim_lekarz"
+			          }
+			        },
+			        "miary.średnia_wizyt_na_lekarza__poradnia": {
+			          "Target": {
+			            "Entity": "miary.średnia_wizyt_na_lekarza__poradnia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_lekarz"
+			            },
+			            "Object": {
+			              "Role": "miary.średnia_wizyt_na_lekarza__poradnia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_lekarzzes_have_średnia_wizyt_na_lekarza__poradnia"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_wskaźnik_anulowań_poradni": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.wskaźnik_anulowań_poradni": {
+			          "Target": {
+			            "Entity": "miary.wskaźnik_anulowań_poradni"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.wskaźnik_anulowań_poradni"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_wskaźnik_anulowań_poradni"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_udział_pacjentów_powracających": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.udział_pacjentów_powracających": {
+			          "Target": {
+			            "Entity": "miary.udział_pacjentów_powracających"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.udział_pacjentów_powracających"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_udział_pacjentów_powracających"
+			        }
+			      ]
+			    },
+			    "dim_pacjent_has_miary_udział_pacjentów_powracających": {
+			      "Binding": {
+			        "ConceptualEntity": "DimPacjent"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_pacjent": {
+			          "Target": {
+			            "Entity": "dim_pacjent"
+			          }
+			        },
+			        "miary.udział_pacjentów_powracających": {
+			          "Target": {
+			            "Entity": "miary.udział_pacjentów_powracających"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_pacjent"
+			            },
+			            "Object": {
+			              "Role": "miary.udział_pacjentów_powracających"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_pacjents_have_udział_pacjentów_powracających"
+			        }
+			      ]
+			    },
+			    "dim_pacjent_has_miary_pacjenci_powracający": {
+			      "Binding": {
+			        "ConceptualEntity": "DimPacjent"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_pacjent": {
+			          "Target": {
+			            "Entity": "dim_pacjent"
+			          }
+			        },
+			        "miary.pacjenci_powracający": {
+			          "Target": {
+			            "Entity": "miary.pacjenci_powracający"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_pacjent"
+			            },
+			            "Object": {
+			              "Role": "miary.pacjenci_powracający"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_pacjents_have_pacjenci_powracający"
+			        }
+			      ]
+			    },
+			    "dim_pacjent_has_miary_liczba_pacjentów": {
+			      "Binding": {
+			        "ConceptualEntity": "DimPacjent"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_pacjent": {
+			          "Target": {
+			            "Entity": "dim_pacjent"
+			          }
+			        },
+			        "miary.liczba_pacjentów": {
+			          "Target": {
+			            "Entity": "miary.liczba_pacjentów"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_pacjent"
+			            },
+			            "Object": {
+			              "Role": "miary.liczba_pacjentów"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_pacjents_have_liczba_pacjentów"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_średnia_wizyt_na_pacjenta": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.średnia_wizyt_na_pacjenta": {
+			          "Target": {
+			            "Entity": "miary.średnia_wizyt_na_pacjenta"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.średnia_wizyt_na_pacjenta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_średnia_wizyt_na_pacjenta"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_średnia_wartość_wizyty": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.średnia_wartość_wizyty": {
+			          "Target": {
+			            "Entity": "miary.średnia_wartość_wizyty"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.średnia_wartość_wizyty"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_średnia_wartość_wizyty"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_wartość_zrealizowanych_usług": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.wartość_zrealizowanych_usług": {
+			          "Target": {
+			            "Entity": "miary.wartość_zrealizowanych_usług"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.wartość_zrealizowanych_usług"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_wartość_zrealizowanych_usług"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_przychód": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.przychód": {
+			          "Target": {
+			            "Entity": "miary.przychód"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.przychód"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_przychód"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_wskaźnik_anulowań": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.wskaźnik_anulowań": {
+			          "Target": {
+			            "Entity": "miary.wskaźnik_anulowań"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.wskaźnik_anulowań"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_wskaźnik_anulowań"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_aktywni_pacjenci": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.aktywni_pacjenci": {
+			          "Target": {
+			            "Entity": "miary.aktywni_pacjenci"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.aktywni_pacjenci"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_aktywni_pacjenci"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_wizyty_anulowane": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.wizyty_anulowane": {
+			          "Target": {
+			            "Entity": "miary.wizyty_anulowane"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.wizyty_anulowane"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_wizyty_anulowane"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_wizyty_zrealizowane": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.wizyty_zrealizowane": {
+			          "Target": {
+			            "Entity": "miary.wizyty_zrealizowane"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.wizyty_zrealizowane"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_wizyty_zrealizowane"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_miary_liczba_wizyt": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "miary.liczba_wizyt": {
+			          "Target": {
+			            "Entity": "miary.liczba_wizyt"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "miary.liczba_wizyt"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_liczba_wizyt"
+			        }
+			      ]
+			    },
+			    "dim_data_has_dzien_tygodnia": {
+			      "Binding": {
+			        "ConceptualEntity": "DimData"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_data": {
+			          "Target": {
+			            "Entity": "dim_data"
+			          }
+			        },
+			        "dim_data.dzien_tygodnia": {
+			          "Target": {
+			            "Entity": "dim_data.dzien_tygodnia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_data"
+			            },
+			            "Object": {
+			              "Role": "dim_data.dzien_tygodnia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_data_have_dzien_tygodnias"
+			        }
+			      ]
+			    },
+			    "dim_data_has_dzien_miesiaca": {
+			      "Binding": {
+			        "ConceptualEntity": "DimData"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_data": {
+			          "Target": {
+			            "Entity": "dim_data"
+			          }
+			        },
+			        "dim_data.dzien_miesiaca": {
+			          "Target": {
+			            "Entity": "dim_data.dzien_miesiaca"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_data"
+			            },
+			            "Object": {
+			              "Role": "dim_data.dzien_miesiaca"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_data_have_dzien_miesiacas"
+			        }
+			      ]
+			    },
+			    "dim_data_has_rok_miesiac": {
+			      "Binding": {
+			        "ConceptualEntity": "DimData"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_data": {
+			          "Target": {
+			            "Entity": "dim_data"
+			          }
+			        },
+			        "dim_data.rok_miesiac": {
+			          "Target": {
+			            "Entity": "dim_data.rok_miesiac"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_data"
+			            },
+			            "Object": {
+			              "Role": "dim_data.rok_miesiac"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_data_have_rok_miesiacs"
+			        }
+			      ]
+			    },
+			    "dim_data_has_kwartal": {
+			      "Binding": {
+			        "ConceptualEntity": "DimData"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_data": {
+			          "Target": {
+			            "Entity": "dim_data"
+			          }
+			        },
+			        "dim_data.kwartal": {
+			          "Target": {
+			            "Entity": "dim_data.kwartal"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_data"
+			            },
+			            "Object": {
+			              "Role": "dim_data.kwartal"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_data_have_kwartals"
+			        }
+			      ]
+			    },
+			    "dim_data_has_miesiac": {
+			      "Binding": {
+			        "ConceptualEntity": "DimData"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_data": {
+			          "Target": {
+			            "Entity": "dim_data"
+			          }
+			        },
+			        "dim_data.miesiac": {
+			          "Target": {
+			            "Entity": "dim_data.miesiac"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_data"
+			            },
+			            "Object": {
+			              "Role": "dim_data.miesiac"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_data_have_miesiacs"
+			        }
+			      ]
+			    },
+			    "dim_data_has_rok": {
+			      "Binding": {
+			        "ConceptualEntity": "DimData"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_data": {
+			          "Target": {
+			            "Entity": "dim_data"
+			          }
+			        },
+			        "dim_data.rok": {
+			          "Target": {
+			            "Entity": "dim_data.rok"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_data"
+			            },
+			            "Object": {
+			              "Role": "dim_data.rok"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_data_have_roks"
+			        }
+			      ]
+			    },
+			    "dim_data_has_data": {
+			      "Binding": {
+			        "ConceptualEntity": "DimData"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_data": {
+			          "Target": {
+			            "Entity": "dim_data"
+			          }
+			        },
+			        "dim_data.data": {
+			          "Target": {
+			            "Entity": "dim_data.data"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_data"
+			            },
+			            "Object": {
+			              "Role": "dim_data.data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_data_have_data"
+			        }
+			      ]
+			    },
+			    "dim_ICD10_has_nazwa_ICD10": {
+			      "Binding": {
+			        "ConceptualEntity": "DimICD10"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_ICD10": {
+			          "Target": {
+			            "Entity": "dim_ICD10"
+			          }
+			        },
+			        "dim_ICD10.nazwa_ICD10": {
+			          "Target": {
+			            "Entity": "dim_ICD10.nazwa_ICD10"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_ICD10"
+			            },
+			            "Object": {
+			              "Role": "dim_ICD10.nazwa_ICD10"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_ICD10_have_nazwa_ICD10"
+			        }
+			      ]
+			    },
+			    "dim_ICD10_has_kod_ICD10": {
+			      "Binding": {
+			        "ConceptualEntity": "DimICD10"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_ICD10": {
+			          "Target": {
+			            "Entity": "dim_ICD10"
+			          }
+			        },
+			        "dim_ICD10.kod_ICD10": {
+			          "Target": {
+			            "Entity": "dim_ICD10.kod_ICD10"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_ICD10"
+			            },
+			            "Object": {
+			              "Role": "dim_ICD10.kod_ICD10"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_ICD10_have_kod_ICD10"
+			        }
+			      ]
+			    },
+			    "dim_status_platnosci_has_status_platnosci": {
+			      "Binding": {
+			        "ConceptualEntity": "DimStatusPlatnosci"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_status_platnosci": {
+			          "Target": {
+			            "Entity": "dim_status_platnosci"
+			          }
+			        },
+			        "dim_status_platnosci.status_platnosci": {
+			          "Target": {
+			            "Entity": "dim_status_platnosci.status_platnosci"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_status_platnosci"
+			            },
+			            "Object": {
+			              "Role": "dim_status_platnosci.status_platnosci"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_status_platnoscis_have_status_platnoscis"
+			        }
+			      ]
+			    },
+			    "dim_status_wizyty_has_status_wizyty": {
+			      "Binding": {
+			        "ConceptualEntity": "DimStatusWizyty"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_status_wizyty": {
+			          "Target": {
+			            "Entity": "dim_status_wizyty"
+			          }
+			        },
+			        "dim_status_wizyty.status_wizyty": {
+			          "Target": {
+			            "Entity": "dim_status_wizyty.status_wizyty"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_status_wizyty"
+			            },
+			            "Object": {
+			              "Role": "dim_status_wizyty.status_wizyty"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_status_wizyties_have_status_wizyties"
+			        }
+			      ]
+			    },
+			    "dim_typ_wizyty_has_typ_wizyty": {
+			      "Binding": {
+			        "ConceptualEntity": "DimTypWizyty"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_typ_wizyty": {
+			          "Target": {
+			            "Entity": "dim_typ_wizyty"
+			          }
+			        },
+			        "dim_typ_wizyty.typ_wizyty": {
+			          "Target": {
+			            "Entity": "dim_typ_wizyty.typ_wizyty"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_typ_wizyty"
+			            },
+			            "Object": {
+			              "Role": "dim_typ_wizyty.typ_wizyty"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_typ_wizyties_have_typ_wizyties"
+			        }
+			      ]
+			    },
+			    "dim_specjalizacja_has_specjalizacja": {
+			      "Binding": {
+			        "ConceptualEntity": "DimSpecjalizacja"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_specjalizacja": {
+			          "Target": {
+			            "Entity": "dim_specjalizacja"
+			          }
+			        },
+			        "dim_specjalizacja.specjalizacja": {
+			          "Target": {
+			            "Entity": "dim_specjalizacja.specjalizacja"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_specjalizacja"
+			            },
+			            "Object": {
+			              "Role": "dim_specjalizacja.specjalizacja"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_specjalizacjas_have_specjalizacjas"
+			        }
+			      ]
+			    },
+			    "dim_lekarz_has_nr_PWZ": {
+			      "Binding": {
+			        "ConceptualEntity": "DimLekarz"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_lekarz": {
+			          "Target": {
+			            "Entity": "dim_lekarz"
+			          }
+			        },
+			        "dim_lekarz.nr_PWZ": {
+			          "Target": {
+			            "Entity": "dim_lekarz.nr_PWZ"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_lekarz"
+			            },
+			            "Object": {
+			              "Role": "dim_lekarz.nr_PWZ"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_lekarzzes_have_nr_PWZzes"
+			        }
+			      ]
+			    },
+			    "dim_lekarz_has_lekarz": {
+			      "Binding": {
+			        "ConceptualEntity": "DimLekarz"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_lekarz": {
+			          "Target": {
+			            "Entity": "dim_lekarz"
+			          }
+			        },
+			        "dim_lekarz.lekarz": {
+			          "Target": {
+			            "Entity": "dim_lekarz.lekarz"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_lekarz"
+			            },
+			            "Object": {
+			              "Role": "dim_lekarz.lekarz"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_lekarzzes_have_lekarzzes"
+			        }
+			      ]
+			    },
+			    "dim_lekarz_has_nazwisko": {
+			      "Binding": {
+			        "ConceptualEntity": "DimLekarz"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_lekarz": {
+			          "Target": {
+			            "Entity": "dim_lekarz"
+			          }
+			        },
+			        "dim_lekarz.nazwisko": {
+			          "Target": {
+			            "Entity": "dim_lekarz.nazwisko"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_lekarz"
+			            },
+			            "Object": {
+			              "Role": "dim_lekarz.nazwisko"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_lekarzzes_have_nazwiskos"
+			        }
+			      ]
+			    },
+			    "dim_lekarz_has_imie": {
+			      "Binding": {
+			        "ConceptualEntity": "DimLekarz"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_lekarz": {
+			          "Target": {
+			            "Entity": "dim_lekarz"
+			          }
+			        },
+			        "dim_lekarz.imie": {
+			          "Target": {
+			            "Entity": "dim_lekarz.imie"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_lekarz"
+			            },
+			            "Object": {
+			              "Role": "dim_lekarz.imie"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_lekarzzes_have_imies"
+			        }
+			      ]
+			    },
+			    "dim_pacjent_has_grupa_wiekowa": {
+			      "Binding": {
+			        "ConceptualEntity": "DimPacjent"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_pacjent": {
+			          "Target": {
+			            "Entity": "dim_pacjent"
+			          }
+			        },
+			        "dim_pacjent.grupa_wiekowa": {
+			          "Target": {
+			            "Entity": "dim_pacjent.grupa_wiekowa"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_pacjent"
+			            },
+			            "Object": {
+			              "Role": "dim_pacjent.grupa_wiekowa"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_pacjents_have_grupa_wiekowas"
+			        }
+			      ]
+			    },
+			    "dim_pacjent_has_wiek": {
+			      "Binding": {
+			        "ConceptualEntity": "DimPacjent"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_pacjent": {
+			          "Target": {
+			            "Entity": "dim_pacjent"
+			          }
+			        },
+			        "dim_pacjent.wiek": {
+			          "Target": {
+			            "Entity": "dim_pacjent.wiek"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_pacjent"
+			            },
+			            "Object": {
+			              "Role": "dim_pacjent.wiek"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_pacjents_have_wieks"
+			        }
+			      ]
+			    },
+			    "dim_pacjent_has_plec": {
+			      "Binding": {
+			        "ConceptualEntity": "DimPacjent"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_pacjent": {
+			          "Target": {
+			            "Entity": "dim_pacjent"
+			          }
+			        },
+			        "dim_pacjent.plec": {
+			          "Target": {
+			            "Entity": "dim_pacjent.plec"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_pacjent"
+			            },
+			            "Object": {
+			              "Role": "dim_pacjent.plec"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_pacjents_have_plecs"
+			        }
+			      ]
+			    },
+			    "dim_pacjent_has_data_urodzenia": {
+			      "Binding": {
+			        "ConceptualEntity": "DimPacjent"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_pacjent": {
+			          "Target": {
+			            "Entity": "dim_pacjent"
+			          }
+			        },
+			        "dim_pacjent.data_urodzenia": {
+			          "Target": {
+			            "Entity": "dim_pacjent.data_urodzenia"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_pacjent"
+			            },
+			            "Object": {
+			              "Role": "dim_pacjent.data_urodzenia"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_pacjents_have_data_urodzenias"
+			        }
+			      ]
+			    },
+			    "dim_pacjent_has_nazwisko": {
+			      "Binding": {
+			        "ConceptualEntity": "DimPacjent"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_pacjent": {
+			          "Target": {
+			            "Entity": "dim_pacjent"
+			          }
+			        },
+			        "dim_pacjent.nazwisko": {
+			          "Target": {
+			            "Entity": "dim_pacjent.nazwisko"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_pacjent"
+			            },
+			            "Object": {
+			              "Role": "dim_pacjent.nazwisko"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_pacjents_have_nazwiskos"
+			        }
+			      ]
+			    },
+			    "dim_pacjent_has_imie": {
+			      "Binding": {
+			        "ConceptualEntity": "DimPacjent"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "dim_pacjent": {
+			          "Target": {
+			            "Entity": "dim_pacjent"
+			          }
+			        },
+			        "dim_pacjent.imie": {
+			          "Target": {
+			            "Entity": "dim_pacjent.imie"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_pacjent"
+			            },
+			            "Object": {
+			              "Role": "dim_pacjent.imie"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_pacjents_have_imies"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_data_platnosci": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "fact_wizyta.data_platnosci": {
+			          "Target": {
+			            "Entity": "fact_wizyta.data_platnosci"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "fact_wizyta.data_platnosci"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_data_platnoscis"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_kwota": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "fact_wizyta.kwota": {
+			          "Target": {
+			            "Entity": "fact_wizyta.kwota"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "fact_wizyta.kwota"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_kwotas"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_data_wizyty": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "fact_wizyta.data_wizyty": {
+			          "Target": {
+			            "Entity": "fact_wizyta.data_wizyty"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "fact_wizyta.data_wizyty"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_data_wizyties"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_dim_ICD10": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "dim_ICD10": {
+			          "Target": {
+			            "Entity": "dim_ICD10"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "dim_ICD10"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_dim_ICD10"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_ICD10"
+			            },
+			            "Object": {
+			              "Role": "fact_wizyta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_ICD10_have_fact_wizytas"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_dim_status_platnosci": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "dim_status_platnosci": {
+			          "Target": {
+			            "Entity": "dim_status_platnosci"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "dim_status_platnosci"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_dim_status_platnoscis"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_status_platnosci"
+			            },
+			            "Object": {
+			              "Role": "fact_wizyta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_status_platnoscis_have_fact_wizytas"
+			        }
+			      ]
+			    },
+			    "fact_wizyta_has_dim_data": {
+			      "Binding": {
+			        "ConceptualEntity": "FactWizyta"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "fact_wizyta": {
+			          "Target": {
+			            "Entity": "fact_wizyta"
+			          }
+			        },
+			        "dim_data": {
+			          "Target": {
+			            "Entity": "dim_data"
+			          },
+			          "Nouns": [
+			            {
+			              "data wizyty data": {
+			                "State": "Generated"
+			              }
+			            }
+			          ]
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "fact_wizyta"
+			            },
+			            "Object": {
+			              "Role": "dim_data"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "fact_wizytas_have_dim_data"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "dim_data"
+			            },
+			            "Object": {
+			              "Role": "fact_wizyta"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "dim_data_have_fact_wizytas"
+			        }
+			      ]
+			    }
+			  },
+			  "Agents": {
+			    "Internal": {
+			      "Version": "1.1.0"
+			    }
+			  }
+			}
+		contentType: json
+

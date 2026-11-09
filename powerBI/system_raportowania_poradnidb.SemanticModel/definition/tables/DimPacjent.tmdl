@@ -1,0 +1,129 @@
+table DimPacjent
+	lineageTag: 32b9afec-4314-4604-bd1a-4551165b4b27
+
+	column PacjentID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: ba23676d-1bc7-4714-afab-0732ef84d885
+		summarizeBy: none
+		sourceColumn: PacjentID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Imie
+		dataType: string
+		lineageTag: 6b2c8902-734c-4da5-92fb-a1cdecac4838
+		summarizeBy: none
+		sourceColumn: Imie
+
+		annotation SummarizationSetBy = Automatic
+
+	column Nazwisko
+		dataType: string
+		lineageTag: c5c256ed-71f1-430e-a3be-e8d1c08ffba4
+		summarizeBy: none
+		sourceColumn: Nazwisko
+
+		annotation SummarizationSetBy = Automatic
+
+	column DataUrodzenia
+		dataType: dateTime
+		formatString: dd.mm.yyyy
+		lineageTag: e5ee5f2b-3fba-4481-84db-3ab2a34aca21
+		summarizeBy: none
+		sourceColumn: DataUrodzenia
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Plec
+		dataType: string
+		lineageTag: a557b152-1f3d-4619-bf43-0320efca0cc0
+		summarizeBy: none
+		sourceColumn: Plec
+
+		annotation SummarizationSetBy = Automatic
+
+	column Wiek
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ca69713-b9e9-44cd-b3ec-290b92b8d6db
+		summarizeBy: none
+		sourceColumn: Wiek
+
+		annotation SummarizationSetBy = User
+
+	column GrupaWiekowa
+		dataType: string
+		lineageTag: 01003e54-2b3c-4bd5-abde-39e3c5ebe65d
+		summarizeBy: none
+		sourceColumn: GrupaWiekowa
+		sortByColumn: GrupaWiekowaSort
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column GrupaWiekowaSort
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 61769270-68f2-42ea-8869-f035d1ea05cd
+		summarizeBy: sum
+		sourceColumn: GrupaWiekowaSort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlecOpis =
+			
+			SWITCH(
+			    DimPacjent[Plec],
+			    "K", "Kobiety",
+			    "M", "Mężczyźni",
+			    "Nieokreślona"
+			)
+		lineageTag: d8ba0674-b4d3-43ab-83b5-81adea16b7fa
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimPacjent = m
+		mode: import
+		source =
+				let
+				  Źródło = Sql.Database("localhost", "PoradniaDB"),
+				  #"Nawigacja 1" = Źródło{[Schema = "dbo", Item = "Pacjent"]}[Data],
+				  #"Usunięto kolumny" = Table.RemoveColumns(#"Nawigacja 1", {"PESEL", "Adres", "Telefon", "Email"}),
+				  #"Dodano niestandardowe" = Table.TransformColumnTypes(Table.AddColumn(#"Usunięto kolumny", "Wiek", each let
+				    DataOdniesienia = #date(2025, 6, 30),
+				    WiekPodstawowy = Date.Year(DataOdniesienia) - Date.Year([DataUrodzenia]),
+				    UrodzinyWtymRoku = #date(
+				        Date.Year(DataOdniesienia),
+				        Date.Month([DataUrodzenia]),
+				        Date.Day([DataUrodzenia])
+				    )
+				in
+				    if UrodzinyWtymRoku > DataOdniesienia
+				    then WiekPodstawowy - 1
+				    else WiekPodstawowy), {{"Wiek", Int64.Type}}),
+				  #"Dodano niestandardowe 1" = Table.TransformColumnTypes(Table.AddColumn(#"Dodano niestandardowe", "GrupaWiekowa", each if [Wiek] >= 18 and [Wiek] <= 24 then "18–24"
+				else if [Wiek] <= 39 then "25–39"
+				else if [Wiek] <= 60 then "40–60"
+				else "61+"), {{"GrupaWiekowa", type text}}),
+				  #"Wstawiono kolumnę warunkową" = Table.AddColumn(#"Dodano niestandardowe 1", "GrupaWiekowaSort", each if [Wiek] <= 24 then 1 else if [Wiek] <= 39 then 2 else if [Wiek] <= 60 then 3 else 4),
+				  #"Zmieniono typ kolumny" = Table.TransformColumnTypes(#"Wstawiono kolumnę warunkową", {{"GrupaWiekowaSort", Int64.Type}}),
+				  #"Zmieniono kolejność kolumn" = Table.ReorderColumns(#"Zmieniono typ kolumny", {"PacjentID", "Imie", "Nazwisko", "DataUrodzenia", "Plec", "Wiek", "GrupaWiekowa", "GrupaWiekowaSort", "Wizyta"}),
+				  #"Usunięto kolumny 1" = Table.RemoveColumns(#"Zmieniono kolejność kolumn", {"Wizyta"})
+				in
+				  #"Usunięto kolumny 1"
+
+	annotation PBI_ResultType = Table
+

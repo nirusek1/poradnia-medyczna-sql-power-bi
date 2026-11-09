@@ -1,0 +1,208 @@
+table DimData
+	lineageTag: 3c12f10a-a4b2-46db-bd65-f15d2123bf6e
+	dataCategory: Time
+
+	column Data
+		dataType: dateTime
+		isKey
+		formatString: dd.mm.yyyy
+		lineageTag: 4dab5628-2cfa-4a8e-965e-d41ec24d822d
+		summarizeBy: none
+		sourceColumn: Data
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation PBI_FormatHint = {"isDateTimeCustom":true}
+
+	column Rok
+		dataType: int64
+		formatString: 0
+		lineageTag: cb7c44c3-9fff-4b88-a281-ff8bd8816e57
+		summarizeBy: none
+		sourceColumn: Rok
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumerMiesiaca
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 7e9a0614-c1c9-4261-8044-4d7730318d5a
+		summarizeBy: none
+		sourceColumn: NumerMiesiaca
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Miesiac
+		dataType: string
+		lineageTag: 4c0aff67-48cd-4eef-b3a4-e650dcd23d92
+		summarizeBy: none
+		sourceColumn: Miesiac
+		sortByColumn: NumerMiesiaca
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kwartal
+		dataType: string
+		lineageTag: 82875102-6fef-4ee6-aa23-b77b5c5e2672
+		summarizeBy: none
+		sourceColumn: Kwartal
+
+		annotation SummarizationSetBy = Automatic
+
+	column RokMiesiac
+		dataType: string
+		lineageTag: 061d658c-7ef1-41e1-823e-f9fb07135f9b
+		summarizeBy: none
+		sourceColumn: RokMiesiac
+
+		annotation SummarizationSetBy = Automatic
+
+	column DzienMiesiaca
+		dataType: int64
+		formatString: 0
+		lineageTag: 96585f37-523a-4063-bf20-cc81fa6689c3
+		summarizeBy: none
+		sourceColumn: DzienMiesiaca
+
+		annotation SummarizationSetBy = Automatic
+
+	column NumerDniaTygodnia
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 55ba273b-8de9-4dcc-97db-f02535349630
+		summarizeBy: none
+		sourceColumn: NumerDniaTygodnia
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column DzienTygodnia
+		dataType: string
+		lineageTag: dee2d02e-a50c-4cca-8e99-15a2388da414
+		summarizeBy: none
+		sourceColumn: DzienTygodnia
+		sortByColumn: NumerDniaTygodnia
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimData = m
+		mode: import
+		source =
+				let
+				    DatyWizyt =
+				        List.RemoveNulls(FactWizyta[DataWizytyData]),
+				
+				    DatyPlatnosci =
+				        List.RemoveNulls(FactWizyta[DataPlatnosciData]),
+				
+				    WszystkieDaty =
+				        List.Combine({DatyWizyt, DatyPlatnosci}),
+				
+				    DataMin =
+				        Date.StartOfYear(List.Min(WszystkieDaty)),
+				
+				    DataMax =
+				        Date.EndOfYear(List.Max(WszystkieDaty)),
+				
+				    LiczbaDni =
+				        Duration.Days(DataMax - DataMin) + 1,
+				
+				    ListaDat =
+				        List.Dates(
+				            DataMin,
+				            LiczbaDni,
+				            #duration(1, 0, 0, 0)
+				        ),
+				
+				    TabelaDat =
+				        Table.FromList(
+				            ListaDat,
+				            Splitter.SplitByNothing(),
+				            {"Data"}
+				        ),
+				
+				    TypDaty =
+				        Table.TransformColumnTypes(
+				            TabelaDat,
+				            {{"Data", type date}}
+				        ),
+				
+				    Rok =
+				        Table.AddColumn(
+				            TypDaty,
+				            "Rok",
+				            each Date.Year([Data]),
+				            Int64.Type
+				        ),
+				
+				    NumerMiesiaca =
+				        Table.AddColumn(
+				            Rok,
+				            "NumerMiesiaca",
+				            each Date.Month([Data]),
+				            Int64.Type
+				        ),
+				
+				    Miesiac =
+				        Table.AddColumn(
+				            NumerMiesiaca,
+				            "Miesiac",
+				            each Date.MonthName([Data], "pl-PL"),
+				            type text
+				        ),
+				
+				    Kwartal =
+				        Table.AddColumn(
+				            Miesiac,
+				            "Kwartal",
+				            each "Q" & Text.From(Date.QuarterOfYear([Data])),
+				            type text
+				        ),
+				
+				    RokMiesiac =
+				        Table.AddColumn(
+				            Kwartal,
+				            "RokMiesiac",
+				            each Date.ToText([Data], "yyyy-MM"),
+				            type text
+				        ),
+				
+				    DzienMiesiaca =
+				        Table.AddColumn(
+				            RokMiesiac,
+				            "DzienMiesiaca",
+				            each Date.Day([Data]),
+				            Int64.Type
+				        ),
+				
+				    NumerDniaTygodnia =
+				        Table.AddColumn(
+				            DzienMiesiaca,
+				            "NumerDniaTygodnia",
+				            each Date.DayOfWeek([Data], Day.Monday) + 1,
+				            Int64.Type
+				        ),
+				
+				    DzienTygodnia =
+				        Table.AddColumn(
+				            NumerDniaTygodnia,
+				            "DzienTygodnia",
+				            each Date.DayOfWeekName([Data], "pl-PL"),
+				            type text
+				        )
+				in
+				    DzienTygodnia
+
+	annotation PBI_ResultType = Table
+

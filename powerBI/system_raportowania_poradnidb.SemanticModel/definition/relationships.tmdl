@@ -1,0 +1,37 @@
+relationship AutoDetected_601a2604-5566-4f2f-a382-5af1030593c4
+	fromColumn: FactWizyta.PacjentID
+	toColumn: DimPacjent.PacjentID
+
+relationship AutoDetected_9a29b374-78a5-40d7-bfee-df6fe89281d1
+	fromColumn: FactWizyta.LekarzID
+	toColumn: DimLekarz.LekarzID
+
+relationship AutoDetected_32d891a2-e1a4-48d3-b6bd-42cbd148ed2c
+	fromColumn: FactWizyta.SpecjalizacjaID
+	toColumn: DimSpecjalizacja.SpecjalizacjaID
+
+relationship AutoDetected_0e183023-8c95-4d07-a084-b75f36863ff9
+	fromColumn: FactWizyta.TypWizytyID
+	toColumn: DimTypWizyty.TypWizytyID
+
+relationship AutoDetected_46688485-2d5a-4b4f-abbf-ce0d3b31f35c
+	fromColumn: FactWizyta.StatusWizytyID
+	toColumn: DimStatusWizyty.StatusWizytyID
+
+relationship AutoDetected_938e38b9-a1c1-4fbc-b7de-188601c7dbc0
+	fromColumn: FactWizyta.ICD10ID
+	toColumn: DimICD10.ICD10ID
+
+relationship AutoDetected_61feecf5-c5a9-4a71-a9f7-89e9860b2999
+	fromColumn: FactWizyta.StatusPlatnosciID
+	toColumn: DimStatusPlatnosci.StatusPlatnosciID
+
+relationship fda9e612-6b7d-9c51-ad72-917cfac376d9
+	fromColumn: FactWizyta.DataWizytyData
+	toColumn: DimData.Data
+
+relationship 6630a7f8-c6ce-9cfb-bcd2-de9318a2e851
+	isActive: false
+	fromColumn: FactWizyta.DataPlatnosciData
+	toColumn: DimData.Data
+
