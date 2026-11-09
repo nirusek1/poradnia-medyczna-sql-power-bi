@@ -1,4 +1,4 @@
-﻿/*
+/*
  Pomiar wydajnosci (tabela 10): 360 wizyt, 36/360 wierszy wynikowych,
  trzy pomiary dla kazdego zapytania.
 */
@@ -11,6 +11,30 @@ GO
 SELECT COUNT(*) AS Wizyty_I_VI_2025
 FROM dbo.vw_FactWizyty
 WHERE DataWizyty >= '20250101' AND DataWizyty < '20250701';
+GO
+
+-- Uruchomienie wstepne obu zapytan, poza pomiarami wlasciwymi.
+SET STATISTICS TIME OFF;
+GO
+
+PRINT 'A - URUCHOMIENIE WSTEPNE';
+
+SELECT f.Rok, f.Miesiac, f.SpecjalizacjaID, f.Specjalizacja,
+       COUNT(*) AS LiczbaWizyt
+FROM dbo.vw_FactWizyty AS f
+WHERE f.DataWizyty >= '20250101'
+  AND f.DataWizyty < '20250701'
+GROUP BY f.Rok, f.Miesiac, f.SpecjalizacjaID, f.Specjalizacja
+ORDER BY f.Rok, f.Miesiac, f.SpecjalizacjaID;
+GO
+
+PRINT 'B - URUCHOMIENIE WSTEPNE';
+
+SELECT f.*
+FROM dbo.vw_FactWizyty AS f
+WHERE f.DataWizyty >= '20250101'
+  AND f.DataWizyty < '20250701'
+ORDER BY f.WizytaID;
 GO
 
 -- Zapytanie A: 6 miesiecy x 6 specjalizacji (oczekiwane 36 grup dla danych pracy).
