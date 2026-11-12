@@ -38,7 +38,7 @@ FROM vw_WizytaBezDiagnozy
 UNION ALL
 
 SELECT
-    N'Zrealizowana wizyta bez płatności',
+    N'Wizyta ze statusem Opłacona lub Zwrot bez rekordu płatności',
     COUNT(*)
 FROM vw_WizytaBezPlatnosci
 
